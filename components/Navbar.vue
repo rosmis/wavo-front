@@ -1,5 +1,5 @@
 <template>
-    <UiContainer full fixed>
+    <UiContainer full fixed class="z-50">
         <div class="flex justify-between flex-grow-0 w-full p-4">
             <a href="#">
                 <img src="/img/logo.png" alt="logo wavo" />
