@@ -1,3 +1,8 @@
 <template>
-    <p class="text-red-600">test</p>
+    <UiContainer full>
+        <UiLevel column space="xl">
+            <HomeHeader />
+            <HomeConcept />
+        </UiLevel>
+    </UiContainer>
 </template>

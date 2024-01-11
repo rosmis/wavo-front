@@ -8,7 +8,12 @@ module.exports = {
         "./error.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                jumper: ["Jumper", "sans-serif"],
+                montserrat: ["Montserrat", "sans-serif"],
+            },
+        },
     },
     plugins: [],
 };
