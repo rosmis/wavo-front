@@ -15,6 +15,6 @@
             <p class="text-white">PLACEHOLDER</p>
         </UiLevel>
 
-        <UiCarousel :items="[1, 2, 3, 4]" />
+        <UiCarousel :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" />
     </UiLevel>
 </template>

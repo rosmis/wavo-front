@@ -6,7 +6,6 @@
         }"
     >
         <input
-            :id="id"
             :type="type"
             :placeholder="placeholder"
             class="bg-[#1a1a1a] text-white w-full p-2 rounded-md border border-[#333333]"
