@@ -1,6 +1,6 @@
 <template>
     <UiContainer full>
-        <UiLevel column space="xl">
+        <UiLevel column space="2xl">
             <HomeHeader />
             <HomeConcept />
             <HomeMarketplace />

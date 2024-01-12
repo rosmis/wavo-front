@@ -3,7 +3,7 @@
         <UiContainer full>
             <div class="flex justify-between flex-grow-0 w-full p-4">
                 <a href="#">
-                    <img src="/img/logo.png" alt="logo wavo" />
+                    <img loading="lazy" src="/img/logo.png" alt="logo wavo" />
                 </a>
 
                 <ul class="flex items-center nav-links gap-4">

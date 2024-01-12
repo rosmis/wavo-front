@@ -31,7 +31,7 @@
                 </p>
             </div>
 
-            <img src="/img/vomero.png" alt="nike vomero" class="w-1/2" />
+            <img src="/img/vomero.png" loading="lazy" alt="nike vomero" class="w-1/2" />
 
             <p
                 class="text-[#55CED5] absolute bottom-8 -translate-x-1/2 left-1/2"

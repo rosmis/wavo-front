@@ -1,10 +1,10 @@
 <template>
     <UiLevel column space="lg">
-        <UiTitle tag="h2" centered size="xl">Comment ça marche ?</UiTitle>
+        <UiTitle tag="h2" centered size="3xl">Comment ça marche ?</UiTitle>
 
-        <UiLevel space="lg">
+        <UiLevel space="lg" class="w-fit">
             <UiIcon
-                v-for="(icon, index) in testContent"
+                v-for="(icon, index) in operationsContent"
                 :icon-content="icon"
                 :key="index"
             />
@@ -17,17 +17,17 @@
 </template>
 
 <script lang="ts" setup>
-const testContent = [
+const operationsContent = [
     {
-        path: "/images/operations/1.png",
+        path: "/img/icons/Bot_Icone_neu.png",
         title: "Rejoins le discord",
     },
     {
-        path: "/images/operations/1.png",
+        path: "/img/icons/Discord_Icone_neu.png",
         title: "Utilise le bot et abonne toi",
     },
     {
-        path: "/images/operations/1.png",
+        path: "/img/icons/Sneakers_Icone_neu.png",
         title: "Ajoute tes préférences produits",
     },
 ];

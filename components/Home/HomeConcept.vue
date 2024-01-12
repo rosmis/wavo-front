@@ -1,18 +1,34 @@
 <template>
     <UiLevel column space="lg">
-        <UiTitle tag="h2" centered size="xl">Concept</UiTitle>
+        <UiTitle tag="h2" centered size="3xl">Concept</UiTitle>
+
         <p class="text-white text-center w-2/3">
             Wavo est la plateforme des revendeurs de seconde main qui permet de
             déposer et monétiser en temps réel leurs produits et vendre
             rapidement, au meilleur prix, en les connectant à tous les
             plateformes.
         </p>
-        <UiLevel
-            align="center"
-            vertical-align="center"
-            class="w-full h-[200px] border border-white"
-        >
-            <p class="text-white">PLACEHOLDER</p>
-        </UiLevel>
+
+        <div class="p-6 mt-8 rounded-xl border-c">
+            <iframe
+                src="https://demo.arcade.software/YMLzXz4t6vk77O09EH2x?embed"
+                title="Discord | Get Quotes | Wavo"
+                frameborder="0"
+                loading="lazy"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+                style="width: 70vw; height: auto; aspect-ratio: 16/9"
+            ></iframe>
+        </div>
     </UiLevel>
 </template>
+
+
+<style scoped>
+
+.border-c {
+    border: 0.5px solid #fff;
+}
+
+</style>

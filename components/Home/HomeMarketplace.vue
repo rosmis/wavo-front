@@ -1,6 +1,6 @@
 <template>
     <UiLevel column class="w-full" space="lg">
-        <UiTitle tag="h2" centered size="xl"
+        <UiTitle tag="h2" centered size="3xl"
             >Booste tes ventes grâce <br />
             aux marketplaces.</UiTitle
         >
@@ -11,7 +11,7 @@
             rapidement.
         </p>
 
-        <UiCarousel :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]" padded />
+        <UiCarousel :brand-urls="brandUrls" padded />
 
         <div class="mx-auto grid gap-8 grid-cols-3">
             <UiCard v-for="(item, index) in items" :key="index" :item="item" />
@@ -23,4 +23,5 @@
 import cardsContent from "../../types/cardsContent";
 
 const items = ref(cardsContent);
+const brandUrls: string[] = Array.from({ length: 18 }, () => '/img/brands/Brand');
 </script>

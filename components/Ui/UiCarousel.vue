@@ -1,12 +1,15 @@
 <template>
-    <div class="flex overflow-hidden w-[95vw]" id="carouselWrapper" :class="{
-        'p-8': padded,
-    }">
+    <div
+        class="flex overflow-hidden w-[95vw]"
+        id="carouselWrapper"
+        :class="{
+            'p-8': padded,
+        }"
+    >
         <UiCarouselItem
-            v-for="(item, index) in items"
-            :key="`card-${index}`"
-            :item="item"
-            :index="index"
+            v-for="(item, index) in brandUrls"
+            :key="`item-${index}`"
+            :image-url="`${item}_${index + 1}.png`"
             class="carousel-item"
         ></UiCarouselItem>
     </div>
@@ -14,7 +17,7 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-    items: number[];
+    brandUrls: string[];
     padded?: boolean;
 }>();
 

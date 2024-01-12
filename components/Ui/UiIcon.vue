@@ -1,7 +1,7 @@
 <template>
     <UiLevel column>
-        <UiLevel align="center" class="p-8 rounded-xl shadow">
-            <img :src="iconContent.path" :alt="iconContent.title" />
+        <UiLevel align="center" class="p-8 rounded-xl w-fit shadow">
+            <img :src="iconContent.path" :alt="iconContent.title" loading="lazy" class="w-1/2" />
         </UiLevel>
 
         <p class="text-white text-center">{{ iconContent.title }}</p>
