@@ -1,6 +1,6 @@
 <template>
     <UiLevel column>
-        <h2 class="text-center text-xl">Concept 123</h2>
+        <h2 class="text-center text-xl">Concept</h2>
         <p class="text-white text-center w-2/3">
             Wavo est la plateforme des revendeurs de seconde main qui permet de
             déposer et monétiser en temps réel leurs produits et vendre

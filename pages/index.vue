@@ -4,6 +4,7 @@
             <HomeHeader />
             <HomeConcept />
             <HomeMarketplace />
+            <HomeOperations />
         </UiLevel>
     </UiContainer>
 </template>
