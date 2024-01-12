@@ -39,10 +39,11 @@ const hovered = ref(false);
     content: "";
     position: absolute;
     inset: 0;
-    background-color: #161616;
+    background-color: #05050a;
     border-radius: 0.75rem;
-    transition: opacity 1.5s cubic-bezier(.19,1,.22,1);
+    transition: opacity 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .card:hover::after {
     opacity: 0;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#161616] flex flex-col gap-16 items-center">
+    <div class="custom-bg flex flex-col gap-16 items-center">
         <Navbar />
 
         <NuxtPage />
@@ -14,7 +14,8 @@
 }
 
 h1,
-h2, h3 {
+h2,
+h3 {
     font-family: "Jumper", "sans-serif";
     color: white;
 }
@@ -23,5 +24,9 @@ h2, h3 {
     font-family: "Montserrat", "sans-serif";
     font-weight: 400;
     color: white;
+}
+
+.custom-bg {
+    background-color: rgb(5 5 10 / 1);
 }
 </style>
