@@ -1,5 +1,7 @@
 <template>
-    <div class="flex overflow-hidden w-screen" id="carouselWrapper">
+    <div class="flex overflow-hidden w-screen" id="carouselWrapper" :class="{
+        'p-8': padded,
+    }">
         <UiCarouselItem
             v-for="(item, index) in items"
             :key="`card-${index}`"
@@ -13,6 +15,7 @@
 <script lang="ts" setup>
 const props = defineProps<{
     items: number[];
+    padded?: boolean;
 }>();
 
 const carouselContainer = ref<Element | undefined | null>(null);

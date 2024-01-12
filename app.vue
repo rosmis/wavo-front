@@ -14,7 +14,7 @@
 }
 
 h1,
-h2 {
+h2, h3 {
     font-family: "Jumper", "sans-serif";
     color: white;
 }
