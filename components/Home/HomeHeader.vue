@@ -1,41 +1,47 @@
 <template>
-    <div class="flex h-screen justify-between items-center relative">
-        <div class="flex flex-col gap-6 items-start relative">
-            <UiTitle tag="h1" size="4xl">Prenez de l'avance</UiTitle>
+    <UiLevel column space="xl">
+        <div class="flex h-screen justify-between items-center relative">
+            <div class="flex flex-col gap-6 items-start relative">
+                <UiTitle tag="h1" size="4xl">Prenez de l'avance</UiTitle>
 
-            <p class="text-white text-lg">
-                Prenez de l'avance, <br />
-                Revendez demain.
-            </p>
+                <p class="text-white text-lg">
+                    Prenez de l'avance, <br />
+                    Revendez demain.
+                </p>
 
-            <UiInput
-                :modelValue="email"
-                placeholder="Votre email"
-                type="email"
-                full
-                @update:modelValue="email = $event"
-                @send="submitEmail()"
-            />
+                <UiInput
+                    :modelValue="email"
+                    placeholder="Votre email"
+                    type="email"
+                    full
+                    @update:modelValue="email = $event"
+                    @send="submitEmail()"
+                />
+                <p
+                    v-if="isEmailInvalid"
+                    class="text-sm absolute -bottom-8 left-0 text-red-500"
+                >
+                    Veuillez rentrer un email valide
+                </p>
+                <p
+                    v-if="isEmailSent"
+                    class="text-sm absolute -bottom-8 left-0 text-green-500"
+                >
+                    Votre email a bien été envoyé
+                </p>
+            </div>
+
+            <img src="/img/vomero.png" alt="nike vomero" class="w-1/2" />
+
             <p
-                v-if="isEmailInvalid"
-                class="text-sm absolute -bottom-8 left-0 text-red-500"
+                class="text-[#55CED5] absolute bottom-8 -translate-x-1/2 left-1/2"
             >
-                Veuillez rentrer un email valide
-            </p>
-            <p
-                v-if="isEmailSent"
-                class="text-sm absolute -bottom-8 left-0 text-green-500"
-            >
-                Votre email a bien été envoyé
+                Wavo simplifie la vie des revendeurs de seconde main.
             </p>
         </div>
 
-        <img src="/img/vomero.png" alt="nike vomero" class="w-1/2" />
-
-        <p class="text-[#55CED5] absolute bottom-8 -translate-x-1/2 left-1/2">
-            Wavo simplifie la vie des revendeurs de seconde main.
-        </p>
-    </div>
+        <UiSocialProofs />
+    </UiLevel>
 </template>
 
 <script lang="ts" setup>
@@ -55,10 +61,10 @@ async function submitEmail() {
     if (!email.value.match(emailRegexPatern)) {
         isEmailInvalid.value = true;
         resetEmailParams();
+
         return;
     }
 
-    // the payload needs to be application/json
     try {
         await fetch(`${runtimeConfig.public.API_BASE_URL}/contacts`, {
             method: "POST",

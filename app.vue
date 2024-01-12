@@ -27,6 +27,6 @@ h3 {
 }
 
 .custom-bg {
-    background-color: rgb(5 5 10 / 1);
+    background-color: #05050a;
 }
 </style>
