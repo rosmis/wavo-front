@@ -1,7 +1,6 @@
 <template>
     <UiLevel column space="lg">
-        <h2 class="text-center text-xl">Comment ça marche ?</h2>
-
+        <UiTitle tag="h2" centered size="xl">Comment ça marche ?</UiTitle>
 
         <UiLevel space="lg">
             <UiIcon
@@ -11,7 +10,9 @@
             />
         </UiLevel>
 
-        <UiButton to="https://www.google.fr" class="mt-8">Rejoindre le discord</UiButton>
+        <UiButton to="https://www.google.fr" class="mt-8"
+            >Rejoindre le discord</UiButton
+        >
     </UiLevel>
 </template>
 
@@ -19,15 +20,15 @@
 const testContent = [
     {
         path: "/images/operations/1.png",
-        title: "1. Créez votre compte",
+        title: "Rejoins le discord",
     },
     {
         path: "/images/operations/1.png",
-        title: "1. Créez votre compte",
+        title: "Utilise le bot et abonne toi",
     },
     {
         path: "/images/operations/1.png",
-        title: "1. Créez votre compte",
+        title: "Ajoute tes préférences produits",
     },
 ];
 </script>

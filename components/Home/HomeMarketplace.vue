@@ -1,9 +1,10 @@
 <template>
     <UiLevel column class="w-full" space="lg">
-        <h2 class="text-center text-xl">
-            Booste tes ventes grâce <br />
-            aux marketplaces.
-        </h2>
+        <UiTitle tag="h2" centered size="xl"
+            >Booste tes ventes grâce <br />
+            aux marketplaces.</UiTitle
+        >
+
         <p class="text-white text-center w-2/3">
             Intégré à 100% aux plateformes de seconde main, Wavo s'occupe de
             tout : pricing, listing et l'expédition, partout pour vendre
