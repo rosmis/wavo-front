@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column>
+    <UiLevel column space="lg">
         <UiTitle tag="h2" centered size="xl">Concept</UiTitle>
         <p class="text-white text-center w-2/3">
             Wavo est la plateforme des revendeurs de seconde main qui permet de

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex overflow-hidden w-screen" id="carouselWrapper" :class="{
+    <div class="flex overflow-hidden w-[95vw]" id="carouselWrapper" :class="{
         'p-8': padded,
     }">
         <UiCarouselItem
