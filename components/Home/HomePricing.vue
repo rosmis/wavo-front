@@ -20,7 +20,7 @@
             </p>
         </UiLevel>
 
-        <div class="grid gap-4 max-w-screen-md grid-cols-2">
+        <div class="grid gap-8 max-w-screen-md grid-cols-2">
             <UiLevel
                 align="left"
                 space="lg"

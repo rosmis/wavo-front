@@ -1,17 +1,25 @@
 <template>
     <div
-        class="flex overflow-hidden w-[95vw]"
-        id="carouselWrapper"
-        :class="{
-            'p-8': padded,
-        }"
+        class="group mx-auto customShadow -ml-6 -mr-6 flex max-w-[90vw] items-start gap-8 carouselWrapper"
     >
-        <UiCarouselItem
-            v-for="(item, index) in brandUrls"
-            :key="`item-${index}`"
-            :image-url="`${item}_${index + 1}.png`"
-            class="carousel-item"
-        ></UiCarouselItem>
+        <!-- divide the array into two arrays two fake the infinite scroll -->
+        <div class="flex overflow-hidden select-none">
+            <ul
+                v-for="(splittedUrlArray, index) in splittedBrandUrls"
+                class="flex min-w-full shrink-0 scroll-x-animation items-start justify-around gap-8"
+                :key="`split-${index}`"
+                :class="{
+                    'p-8': padded,
+                }"
+            >
+                <UiCarouselItem
+                    v-for="(item, itemIndex) in splittedUrlArray"
+                    :key="`item-${itemIndex}`"
+                    :image-url="`${item}_${itemIndex + 1}.png`"
+                    class="carousel-item"
+                ></UiCarouselItem>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -21,62 +29,67 @@ const props = defineProps<{
     padded?: boolean;
 }>();
 
-const carouselContainer = ref<Element | undefined | null>(null);
-const carouselInterval = ref<number | undefined>(undefined);
+const splittedBrandUrls = computed(() => {
+    const firstHalf = props.brandUrls.slice(0, 9);
+    const secondHalf = props.brandUrls.slice(9, 18);
+
+    return [firstHalf, secondHalf];
+});
 
 onMounted(() => {
-    carouselContainer.value = document.querySelector("#carouselWrapper");
+    const carouselWrapper = document.querySelector(".carouselWrapper");
+    const carouselLists = carouselWrapper?.querySelectorAll("ul");
 
-    const scrollWidth = carouselContainer.value?.scrollWidth;
-    const itemsList: NodeListOf<Element> =
-        document.querySelectorAll(".carousel-item");
+    carouselWrapper?.addEventListener("mouseenter", () => {
+        console.log("paused");
 
-    let isScrollingPaused = false;
+        carouselLists?.forEach((list) => {
+            list.classList.add("animation-paused");
+        });
+    });
+    carouselWrapper?.addEventListener("mouseleave", () => {
+        console.log("unpaused");
 
-    carouselInterval.value = self.setInterval(() => {
-        if (isScrollingPaused || !carouselContainer.value) {
-            return;
-        }
-        const first: HTMLDivElement | null =
-            carouselContainer.value?.querySelector(".carousel-item");
-
-        if (!isElementInViewport(first) && first) {
-            carouselContainer.value.appendChild(first);
-            carouselContainer.value.scrollTo(
-                carouselContainer.value.scrollLeft - first.offsetWidth,
-                0
-            );
-        }
-        if (carouselContainer.value.scrollLeft !== scrollWidth) {
-            carouselContainer.value.scrollTo(
-                carouselContainer.value.scrollLeft + 1,
-                0
-            );
-        }
-    }, 15);
-
-    itemsList.forEach((article) => {
-        article.addEventListener(
-            "mouseenter",
-            () => (isScrollingPaused = true)
-        );
-
-        article.addEventListener(
-            "mouseleave",
-            () => (isScrollingPaused = false)
-        );
+        carouselLists?.forEach((list) => {
+            list.classList.remove("animation-paused");
+        });
     });
 });
+</script>
 
-function isElementInViewport(el: HTMLDivElement | null): boolean {
-    if (!el) return false;
-
-    const rect = el.getBoundingClientRect();
-    return rect.right > 0;
+<style scoped>
+.scroll-x-animation {
+    animation: scroll-x 124s linear infinite;
 }
 
-onUnmounted(() => {
-    // clear interval in case the component is unmounted before the interval is cleared
-    clearInterval(carouselInterval.value);
-});
-</script>
+.animation-paused {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-x {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - 32px));
+    }
+}
+
+.customShadow {
+    -webkit-mask-image: linear-gradient(
+        var(--mask-direction, to right),
+        transparent,
+        #000 20%,
+        #000 80%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        var(--mask-direction, to right),
+        transparent,
+        #000 20%,
+        #000 80%,
+        transparent
+    );
+}
+</style>

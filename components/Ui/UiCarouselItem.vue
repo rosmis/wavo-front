@@ -1,10 +1,10 @@
 <template>
-    <div
-        class="md:w-[250px] bg-contain bg-center bg-no-repeat border-b-0 border-slate-5 px-8 py-6  flex-shrink-0 w-[150px]"
+    <li
+        class="md:w-[350px] max-w-full bg-contain bg-center bg-no-repeat border-b-0 px-8 py-6 w-[450px]"
         :style="{
             backgroundImage: `url('${imageUrl}')`,
         }"
-    ></div>
+    ></li>
 </template>
 
 <script lang="ts" setup>
