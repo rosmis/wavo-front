@@ -4,16 +4,20 @@
             <p
                 :class="{
                     'text-white': isMonthlyPaiementSelected,
-                    'text-[#FB7185]': !isMonthlyPaiementSelected,
+                    'text-[#FF6A65]': !isMonthlyPaiementSelected,
                 }"
             >
                 Paiement mensuel
             </p>
-            <UToggle v-model="isMonthlyPaiementSelected" color="rose" />
+            <UToggle
+                v-model="isMonthlyPaiementSelected"
+                color="rose"
+                class="!bg-[#FF6A65]"
+            />
             <p
                 :class="{
                     'text-white': !isMonthlyPaiementSelected,
-                    'text-[#FB7185]': isMonthlyPaiementSelected,
+                    'text-[#FF6A65]': isMonthlyPaiementSelected,
                 }"
             >
                 Paiement annuel

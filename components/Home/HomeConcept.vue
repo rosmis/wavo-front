@@ -1,5 +1,11 @@
 <template>
-    <UiLevel column space="lg">
+    <UiLevel
+        column
+        space="lg"
+        class="py-20 relative border-t customBorder rounded-3xl"
+    >
+        <UiDivider />
+
         <UiTitle tag="h2" centered size="3xl">Concept</UiTitle>
 
         <p class="text-white text-center w-2/3">
@@ -24,11 +30,12 @@
     </UiLevel>
 </template>
 
-
 <style scoped>
-
 .border-c {
     border: 0.5px solid #fff;
 }
 
+.customBorder {
+    border-color: rgba(212, 228, 254, 0.095);
+}
 </style>
