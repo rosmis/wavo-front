@@ -5,6 +5,7 @@
             <HomeConcept />
             <HomeMarketplace />
             <HomeOperations />
+            <HomePricing />
         </UiLevel>
     </UiContainer>
 </template>

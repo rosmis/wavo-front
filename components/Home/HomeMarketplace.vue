@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column class="w-full" space="lg">
+    <UiLevel column class="w-full" space="xl">
         <UiTitle tag="h2" centered size="3xl"
             >Booste tes ventes grâce <br />
             aux marketplaces.</UiTitle

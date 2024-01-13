@@ -5,7 +5,7 @@ export default defineNuxtConfig({
             API_BASE_URL: process.env.NUXT_WAVO_API_URL,
         },
     },
-    modules: ["@vueuse/nuxt", "nuxt-icon"],
+    modules: ["@vueuse/nuxt", "nuxt-icon", '@nuxt/ui'],
     devtools: { enabled: true },
     css: ["~/assets/css/main.css"],
     postcss: {

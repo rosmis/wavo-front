@@ -6,6 +6,7 @@
             :avatar-url="avatarUrl"
             :index="index"
         />
+
         <p class="text-white mt-4">
             + 117 utilisateurs, + 550 ventes ce mois-ci
         </p>
