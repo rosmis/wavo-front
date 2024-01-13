@@ -3,7 +3,7 @@
         <div class="flex h-screen gap-8 justify-between items-center relative">
             <div class="flex flex-col gap-6 items-start relative">
                 <UiTitle tag="h1" size="4xl"
-                    >La consigne sneakers ultime (en gros)</UiTitle
+                    >La consigne sneakers ultime</UiTitle
                 >
 
                 <p class="text-white text-lg">
@@ -16,7 +16,7 @@
                     :modelValue="email"
                     placeholder="Votre email"
                     type="email"
-                    full
+                    class="w-2/3"
                     @update:modelValue="email = $event"
                     @send="submitEmail()"
                 />
