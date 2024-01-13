@@ -8,19 +8,23 @@
 
                 <ul class="flex items-center nav-links gap-4">
                     <li>
-                        <a href="#">Concept</a>
+                        <NuxtLink to="#concept">Concept</NuxtLink>
                     </li>
                     <li>
-                        <a href="#">Comment ça marche</a>
+                        <NuxtLink to="#how-it-works"
+                            >Comment ça marche</NuxtLink
+                        >
                     </li>
                     <li>
-                        <a href="#">Tarifs</a>
+                        <NuxtLink to="#pricing">Tarifs</NuxtLink>
                     </li>
                     <li>
-                        <a href="#">Nous contacter</a>
+                        <NuxtLink to="#contact">Nous contacter</NuxtLink>
                     </li>
                     <li>
-                        <a href="#">S'abonner</a>
+                        <UiButton size="sm" to="google.fr" padded
+                            >S'abonner</UiButton
+                        >
                     </li>
                 </ul>
             </div>
@@ -31,24 +35,26 @@
 <style scoped>
 .nav-links li {
     position: relative;
-    /* TODO fix the transition */
-    transition: all 0.2 cubic-bezier(0.19, 1, 0.22, 1);
 }
-.nav-links li::after {
+.nav-links li::before {
     content: "";
-    position: absolute;
     border-radius: 5px;
+    position: absolute;
+    transition: 300ms;
     bottom: -17%;
     right: 10%;
     left: 10%;
     width: 0%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.829);
-    transition: all 0.2 cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.nav-links li:hover::after {
-    width: 100%;
+.nav-links li:last-child::before {
+    display: none;
+}
+
+.nav-links li:hover::before {
+    width: 80%;
 }
 
 .nav-links li a {
@@ -60,7 +66,7 @@
 }
 
 .background {
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
     background-color: rgba(5, 5, 10, 0.6);
 }
 </style>

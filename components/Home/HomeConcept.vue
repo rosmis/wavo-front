@@ -3,6 +3,7 @@
         column
         space="lg"
         class="py-20 relative border-t customBorder rounded-3xl"
+        id="concept"
     >
         <UiDivider />
 

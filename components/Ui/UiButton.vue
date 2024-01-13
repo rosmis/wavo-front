@@ -2,7 +2,11 @@
     <NuxtLink
         :to="to"
         :target="targetBlank ? '_blank' : null"
-        class="text-white button py-2 px-14 bg-[#232323] rounded-3xl"
+        class="text-white button !py-2 !px-14 bg-[#232323] rounded-3xl"
+        :class="{
+            '!py-2 !px-8': size === 'sm',
+            'text-base': size !== 'sm',
+        }"
     >
         <slot />
     </NuxtLink>
@@ -13,6 +17,7 @@ defineProps<{
     to: string;
     targetBlank?: boolean;
     iconPath?: string;
+    size?: "sm";
 }>();
 </script>
 

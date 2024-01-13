@@ -23,5 +23,8 @@
 import cardsContent from "../../types/cardsContent";
 
 const items = ref(cardsContent);
-const brandUrls: string[] = Array.from({ length: 18 }, () => '/img/brands/Brand');
+const brandUrls: string[] = Array.from(
+    { length: 18 },
+    () => "/img/brands/Brand"
+);
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column space="xl">
+    <UiLevel column space="xl" id="pricing">
         <UiLevel>
             <p
                 :class="{
