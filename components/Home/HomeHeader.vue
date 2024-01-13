@@ -1,12 +1,15 @@
 <template>
     <UiLevel column space="xl">
-        <div class="flex h-screen justify-between items-center relative">
+        <div class="flex h-screen gap-8 justify-between items-center relative">
             <div class="flex flex-col gap-6 items-start relative">
-                <UiTitle tag="h1" size="4xl">Prenez de l'avance</UiTitle>
+                <UiTitle tag="h1" size="4xl"
+                    >La consigne sneakers ultime (en gros)</UiTitle
+                >
 
                 <p class="text-white text-lg">
-                    Prenez de l'avance, <br />
-                    Revendez demain.
+                    Reçois un paiement lors du dépôt pour toutes tes paires
+                    <br />
+                    Vends tes sneakers sur toutes les marketplaces pro
                 </p>
 
                 <UiInput
@@ -31,7 +34,12 @@
                 </p>
             </div>
 
-            <img src="/img/vomero.png" loading="lazy" alt="nike vomero" class="w-1/2" />
+            <img
+                src="/img/vomero.png"
+                loading="lazy"
+                alt="nike vomero"
+                class="w-1/2"
+            />
 
             <p
                 class="text-[#55CED5] absolute bottom-8 -translate-x-1/2 left-1/2"

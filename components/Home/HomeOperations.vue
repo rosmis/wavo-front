@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column space="lg" id="how-it-works">
+    <UiLevel column space="xl" id="how-it-works">
         <UiTitle tag="h2" centered size="3xl">Comment ça marche ?</UiTitle>
 
         <UiLevel space="lg" class="w-fit">

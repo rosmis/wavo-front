@@ -1,7 +1,7 @@
 <template>
     <UiLevel
         column
-        space="lg"
+        space="xl"
         class="py-20 relative border-t customBorder rounded-3xl"
         id="concept"
     >
