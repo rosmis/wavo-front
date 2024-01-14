@@ -7,16 +7,21 @@
     >
         <UiDivider />
 
-
         <UiTitle tag="h2" centered size="3xl"
             >Beaucoup plus qu'une simple consigne.</UiTitle
         >
 
-        <p class="text-white text-center w-2/3">
-            Une interface simple et élégante qui vous permet de commencer à
-            valider tes dépôts et tes premiers paiements en quelques minutes
-            seulement.
-        </p>
+        <UiLevel column>
+            <p class="text-white text-center w-2/3">
+                Une interface simple et élégante qui vous permet de commencer à
+                valider tes dépôts et tes premiers paiements en quelques minutes
+                seulement.
+            </p>
+
+            <UiButton to="https://discord.com/invite/hh2NKyFYUn" class="mt-8"
+                >Rejoindre le discord</UiButton
+            >
+        </UiLevel>
 
         <div class="p-6 mt-8 rounded-xl border-c">
             <iframe

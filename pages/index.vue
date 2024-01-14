@@ -6,6 +6,7 @@
             <HomeMarketplace />
             <HomeOperations />
             <HomePricing />
+            <HomeContact />
         </UiLevel>
     </UiContainer>
 </template>

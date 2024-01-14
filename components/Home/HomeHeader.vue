@@ -23,6 +23,7 @@
                     type="email"
                     class="w-2/3"
                     icon="material-symbols:send-outline"
+                    input-style="default"
                     @update:modelValue="email = $event"
                     @send="submitEmail()"
                 />
@@ -41,11 +42,7 @@
             </div>
 
             <div class="ratio1">
-                <img
-                    src="/img/vomero.png"
-                    alt="nike vomero"
-                    class="w-full"
-                />
+                <img src="/img/vomero.png" alt="nike vomero" class="w-full" />
             </div>
 
             <a
@@ -70,12 +67,10 @@ const isEmailInvalid = ref(false);
 const isEmailSent = ref(false);
 
 async function submitEmail() {
-    const emailRegexPatern = "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$";
-
     if (!email.value) {
         return;
     }
-    if (!email.value.match(emailRegexPatern)) {
+    if (!checkEmailValidity(email.value)) {
         isEmailInvalid.value = true;
         resetEmailParams();
 

@@ -7,7 +7,6 @@
             professionnels adaptés au marché de la sneakers.
         </p>
 
-<!-- align center the grid items -->
         <div class="grid grid-cols-3 gap-8 items-start">
             <UiIcon
                 v-for="(icon, index) in operationsContent"

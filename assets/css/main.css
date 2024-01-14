@@ -90,3 +90,15 @@ h3 {
 .nav-links li:hover::before {
     width: 80%;
 }
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+div[role="status"] {
+    background-color: #05050a !important;
+}
+
+.h-1 {
+    background-color: #FF6A65 !important;
+}

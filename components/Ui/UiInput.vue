@@ -8,8 +8,15 @@
         <input
             :value="modelValue"
             :type="type"
+            :id="label"
+            :required="required"
             :placeholder="placeholder"
-            class="bg-[#1a1a1a] text-white w-full p-2 rounded-md border border-[#333333]"
+            :class="{
+                'bg-[#1a1a1a] text-white w-full p-2 rounded-md border border-[#333333]':
+                    inputStyle === 'default',
+                'bg-transparent text-white w-full p-2 rounded-md border border-slate-400 focus:border-[#ff6a6587]':
+                    inputStyle === 'contact',
+            }"
             @keyup.enter="$emit('send')"
             @input="$emit('update:modelValue', $event.target.value)"
         />
@@ -40,6 +47,9 @@ defineProps<{
     type: string;
     full?: boolean;
     icon?: string;
+    required?: boolean;
+
+    inputStyle?: "default" | "outline";
 }>();
 
 const emit = defineEmits<{
@@ -47,9 +57,3 @@ const emit = defineEmits<{
     (event: "send"): void;
 }>();
 </script>
-
-<style scoped>
-input:focus {
-    outline: none;
-}
-</style>
