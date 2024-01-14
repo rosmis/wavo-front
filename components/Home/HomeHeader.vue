@@ -50,11 +50,11 @@
             </UiLevel>
 
             <a
-                class="text-[#55CED5] absolute text-center w-full hover:underline bottom-12 -translate-x-1/2 left-1/2"
+                class="text-[#55CED5] absolute flex items-center justify-center gap-2 text-center w-full hover:underline bottom-12 -translate-x-1/2 left-1/2"
                 href="https://www.hub612.com/"
                 target="_blank"
             >
-                Accompagné par HUB612
+                Accompagné par <img src="/img/icons/Logo_hub.svg" class="w-[40px]" loading="lazy" alt="logo_hub" />
             </a>
         </UiLevel>
 

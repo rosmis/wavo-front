@@ -1,6 +1,6 @@
 <template>
     <UiLevel column :space="isMobile ? 'lg' : 'xl'" id="pricing">
-        <UiLevel class="w-full" :space="isMobile ? 'sm' : null" no-mobile-col>
+        <UiLevel class="w-full md:justify-center justify-between !flex-row" :space="isMobile ? 'sm' : null">
             <p
                 class="text-sm md:text-base"
                 :class="{
