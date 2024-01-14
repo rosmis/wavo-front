@@ -7,6 +7,7 @@
     >
         <UiDivider />
 
+
         <UiTitle tag="h2" centered size="3xl"
             >Beaucoup plus qu'une simple consigne.</UiTitle
         >

@@ -15,7 +15,8 @@
         />
 
         <Icon
-            name="material-symbols:send-outline"
+            v-if="icon"
+            :name="icon"
             class="absolute bottom-[15%] right-[1%] text-3xl p-1 hover:bg-[#333333] rounded-full cursor-pointer"
             @click="$emit('send')"
         />
@@ -38,6 +39,7 @@ defineProps<{
     label?: string;
     type: string;
     full?: boolean;
+    icon?: string;
 }>();
 
 const emit = defineEmits<{

@@ -1,9 +1,13 @@
 <template>
-    <div class="background w-full fixed top-0 left-0 right-0 z-50">
+    <header class="background w-full fixed top-0 left-0 right-0 z-50">
         <UiContainer full>
             <div class="flex justify-between flex-grow-0 w-full p-4">
                 <a href="#">
-                    <img loading="lazy" src="/img/logo.png" alt="logo wavo" />
+                    <img
+                        class="w-[150px]"
+                        src="/img/logo.svg"
+                        alt="logo wavo"
+                    />
                 </a>
 
                 <ul class="flex items-center nav-links gap-4">
@@ -29,34 +33,10 @@
                 </ul>
             </div>
         </UiContainer>
-    </div>
+    </header>
 </template>
 
 <style scoped>
-.nav-links li {
-    position: relative;
-}
-.nav-links li::before {
-    content: "";
-    border-radius: 5px;
-    position: absolute;
-    transition: 300ms;
-    bottom: -17%;
-    right: 10%;
-    left: 10%;
-    width: 0%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.829);
-}
-
-.nav-links li:last-child::before {
-    display: none;
-}
-
-.nav-links li:hover::before {
-    width: 80%;
-}
-
 .nav-links li a {
     color: white;
     padding: 1em;

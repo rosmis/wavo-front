@@ -22,6 +22,7 @@
                     placeholder="Laisse-nous ton email pour garder contact"
                     type="email"
                     class="w-2/3"
+                    icon="material-symbols:send-outline"
                     @update:modelValue="email = $event"
                     @send="submitEmail()"
                 />
@@ -42,7 +43,6 @@
             <div class="ratio1">
                 <img
                     src="/img/vomero.png"
-                    loading="lazy"
                     alt="nike vomero"
                     class="w-full"
                 />

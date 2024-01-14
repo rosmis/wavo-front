@@ -32,3 +32,61 @@
     font-weight: 500;
     src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Jumper", "sans-serif";
+    color: white;
+}
+
+* {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 400;
+    color: white;
+}
+
+.custom-bg {
+    background-color: #05050a;
+}
+
+.customBorder {
+    border-color: rgba(212, 228, 254, 0.095);
+}
+
+.nav-links li {
+    position: relative;
+}
+.nav-links li::before {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    transition: 300ms;
+    bottom: -17%;
+    right: 10%;
+    left: 10%;
+    width: 0%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.829);
+}
+.nav-links li.footer-links::before {
+    background-color: rgb(148 163 184);
+}
+
+.nav-links li:last-child::before {
+    display: none;
+}
+
+.nav-links li.footer-links:last-child::before {
+    display: block !important;
+}
+
+.nav-links li:hover::before {
+    width: 80%;
+}
