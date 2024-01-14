@@ -58,6 +58,7 @@ withDefaults(
         breakpoint: undefined,
         expanded: false,
         wrapped: false,
+        noMobileCol: false,
     }
 );
 </script>

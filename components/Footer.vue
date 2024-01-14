@@ -3,7 +3,7 @@
         <UiDivider />
 
         <UiContainer full class="py-20">
-            <UiLevel :vertical-align="isMobile ? null : 'bottom'">
+            <UiLevel class="md:items-end items-center">
                 <div class="flex flex-col gap-2 items-center md:items-start">
                     <img
                         class="w-[150px]"
