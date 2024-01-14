@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column class="relative">
+    <UiLevel column class="relative mt-6">
         <UiAvatar
             v-for="(avatarUrl, index) in randomDiscordAvatarUrls"
             :key="`avatar-${index}`"
@@ -7,8 +7,9 @@
             :index="index"
         />
 
-        <p class="text-white mt-4">
-            + 117 utilisateurs, + 550 ventes ce mois-ci
+        <p class="text-white text-center">
+            Ces revendeurs nous font confiance <br />
+            pour vendre leur paires
         </p>
     </UiLevel>
 </template>

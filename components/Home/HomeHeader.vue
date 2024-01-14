@@ -1,20 +1,25 @@
 <template>
     <UiLevel column space="xl">
         <div class="flex h-screen gap-8 justify-between items-center relative">
-            <div class="flex flex-col gap-6 items-start relative">
-                <UiTitle tag="h1" size="4xl"
-                    >La consigne sneakers ultime</UiTitle
-                >
+            <div class="flex flex-col gap-6 items-start ratio2 relative">
+                <p class="text-slate-400 text-sm">
+                    Consigne digitale pour toutes tes sneakers
+                </p>
+
+                <UiTitle tag="h1" class="text-[3em] leading-tight"
+                    >Vendre tes sneakers <br />
+                    sans les galères du resell
+                </UiTitle>
 
                 <p class="text-white text-lg">
-                    Reçois un paiement lors du dépôt pour toutes tes paires
+                    Paiement tellement rapide qu'il a lieu avant la vente.
                     <br />
-                    Vends tes sneakers sur toutes les marketplaces pro
+                    Accède à toutes les marketplaces pro sans effort.
                 </p>
 
                 <UiInput
                     :modelValue="email"
-                    placeholder="Votre email"
+                    placeholder="Laisse-nous ton email pour garder contact"
                     type="email"
                     class="w-2/3"
                     @update:modelValue="email = $event"
@@ -34,18 +39,22 @@
                 </p>
             </div>
 
-            <img
-                src="/img/vomero.png"
-                loading="lazy"
-                alt="nike vomero"
-                class="w-1/2"
-            />
+            <div class="ratio1">
+                <img
+                    src="/img/vomero.png"
+                    loading="lazy"
+                    alt="nike vomero"
+                    class="w-full"
+                />
+            </div>
 
-            <p
-                class="text-[#55CED5] absolute bottom-8 -translate-x-1/2 left-1/2"
+            <a
+                class="text-[#55CED5] absolute hover:underline bottom-8 -translate-x-1/2 left-1/2"
+                href="https://www.hub612.com/"
+                target="_blank"
             >
-                Wavo simplifie la vie des revendeurs de seconde main.
-            </p>
+                Accompagné par HUB612
+            </a>
         </div>
 
         <UiSocialProofs />
@@ -100,3 +109,13 @@ function resetEmailParams() {
     }, 3000);
 }
 </script>
+
+<style scoped>
+.ratio1 {
+    flex: 1;
+}
+
+.ratio2 {
+    flex: 1.5;
+}
+</style>

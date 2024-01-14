@@ -7,7 +7,7 @@
                     'text-[#FF6A65]': !isMonthlyPaiementSelected,
                 }"
             >
-                Paiement mensuel
+                Paiement annuel
             </p>
             <UToggle
                 v-model="isMonthlyPaiementSelected"
@@ -20,7 +20,7 @@
                     'text-[#FF6A65]': isMonthlyPaiementSelected,
                 }"
             >
-                Paiement annuel
+                Paiement mensuel
             </p>
         </UiLevel>
 
@@ -44,7 +44,10 @@
 
                     <p class="italic font-thin">
                         soit
-                        {{ isMonthlyPaiementSelected ? "480€" : "432€" }} annuel
+                        {{
+                            isMonthlyPaiementSelected ? "480€" : "432€"
+                        }}
+                        annuel
                     </p>
                 </UiLevel>
 
@@ -110,7 +113,10 @@
 
                     <p class="italic font-thin">
                         soit
-                        {{ isMonthlyPaiementSelected ? "720€" : "624€" }} annuel
+                        {{
+                            isMonthlyPaiementSelected ? "720€" : "624€"
+                        }}
+                        annuel
                     </p>
                 </UiLevel>
 
