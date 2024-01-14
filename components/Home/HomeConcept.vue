@@ -7,13 +7,14 @@
     >
         <UiDivider />
 
-        <UiTitle tag="h2" centered size="3xl">Concept</UiTitle>
+        <UiTitle tag="h2" centered size="3xl"
+            >Beaucoup plus qu'une simple consigne.</UiTitle
+        >
 
         <p class="text-white text-center w-2/3">
-            Wavo est la plateforme des revendeurs de seconde main qui permet de
-            déposer et monétiser en temps réel leurs produits et vendre
-            rapidement, au meilleur prix, en les connectant à tous les
-            plateformes.
+            Une interface simple et élégante qui vous permet de commencer à
+            valider tes dépôts et tes premiers paiements en quelques minutes
+            seulement.
         </p>
 
         <div class="p-6 mt-8 rounded-xl border-c">
@@ -34,9 +35,5 @@
 <style scoped>
 .border-c {
     border: 0.5px solid #fff;
-}
-
-.customBorder {
-    border-color: rgba(212, 228, 254, 0.095);
 }
 </style>

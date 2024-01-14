@@ -29,4 +29,8 @@ h3 {
 .custom-bg {
     background-color: #05050a;
 }
+
+.customBorder {
+    border-color: rgba(212, 228, 254, 0.095);
+}
 </style>

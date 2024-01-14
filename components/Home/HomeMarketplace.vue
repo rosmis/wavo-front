@@ -1,14 +1,21 @@
 <template>
-    <UiLevel column class="w-full" space="xl">
+    <UiLevel
+        column
+        class="w-full py-20 relative border-t customBorder rounded-3xl"
+        space="xl"
+    >
+        <UiDivider />
+
         <UiTitle tag="h2" centered size="3xl"
             >Booste tes ventes grâce <br />
             aux marketplaces.</UiTitle
         >
 
         <p class="text-white text-center w-2/3">
-            Intégré à 100% aux plateformes de seconde main, Wavo s'occupe de
-            tout : pricing, listing et l'expédition, partout pour vendre
-            rapidement.
+            Intégré aux plus grandes marketplaces professionnelles, ainsi que
+            les plateformes spécialisées sneakers ou encore en lien étroit avec
+            +20 resell shops. Wavo s'occupe de vendre tes sneakers consignées
+            partout, au meilleur prix
         </p>
 
         <UiCarousel :brand-urls="brandUrls" padded />

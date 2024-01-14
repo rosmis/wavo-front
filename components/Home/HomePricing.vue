@@ -24,7 +24,7 @@
             </p>
         </UiLevel>
 
-        <div class="grid gap-8 max-w-screen-md grid-cols-2">
+        <div class="grid gap-8 max-w-[850px] grid-cols-2">
             <UiLevel
                 align="left"
                 space="lg"
@@ -42,12 +42,15 @@
                         par mois
                     </p>
 
-                    <p class="italic font-thin">
+                    <p class="italic font-thin text-center">
                         soit
-                        {{
-                            isMonthlyPaiementSelected ? "480€" : "432€"
-                        }}
-                        annuel
+                        {{ isMonthlyPaiementSelected ? "480€" : "432€" }}
+                        annuel <br />
+                        <span class="text-sm">{{
+                            isMonthlyPaiementSelected
+                                ? ""
+                                : "(-10% de réduction)"
+                        }}</span>
                     </p>
                 </UiLevel>
 
@@ -60,30 +63,31 @@
                     </p>
 
                     <p class="text-left w-full">
-                        Avance de trésorerie illimitée sur tes paires
+                        - Avance de trésorerie illimitée sur tes paires
                     </p>
 
                     <p class="text-left w-full">
-                        20 paires inclues dans l'abonnement <br />
+                        - 20 paires inclues dans l'abonnement <br />
                         (3€ / paires par mois au delà)
                     </p>
 
                     <p class="text-left w-full">
-                        Tous tes produits consignés listés sur nos marketplaces
+                        - Tous tes produits consignés listés sur nos
+                        marketplaces
                     </p>
 
                     <p class="text-left w-full">
-                        Frais de transport offert pour les dépôts de plus de 2
+                        - Frais de transport offert pour les dépôts de plus de 2
                         paires
                     </p>
 
                     <p class="text-left w-full">
-                        On envoie ta paire à ton acheteur (5€ de frais pour la
+                        - On envoie ta paire à ton acheteur (5€ de frais pour la
                         France)
                     </p>
 
                     <p class="text-left w-full">
-                        Wavo Signals pour 5 de tes paires
+                        - Wavo Signals pour 5 de tes paires
                     </p>
                 </UiLevel>
             </UiLevel>
@@ -113,10 +117,13 @@
 
                     <p class="italic font-thin">
                         soit
-                        {{
-                            isMonthlyPaiementSelected ? "720€" : "624€"
-                        }}
-                        annuel
+                        {{ isMonthlyPaiementSelected ? "720€" : "624€" }}
+                        annuel <br />
+                        <span class="text-sm">{{
+                            isMonthlyPaiementSelected
+                                ? ""
+                                : "(-13,3% de réduction)"
+                        }}</span>
                     </p>
                 </UiLevel>
 
@@ -127,20 +134,20 @@
                         L'offre standart + :
                     </p>
 
-                    <p class="text-left w-full">Avance de trésorie boostés</p>
+                    <p class="text-left w-full">- Avance de trésorie boostés</p>
 
                     <p class="text-left w-full">
-                        20 paires inclues dans l'abonnement
+                        - 20 paires inclues dans l'abonnement
                     </p>
 
-                    <p class="text-left w-full">2e/paires/mois au dela</p>
+                    <p class="text-left w-full">- 2e/paires/mois au dela</p>
 
                     <p class="text-left w-full">
-                        Pas de frais sur l'envoi direct à un acheteur
+                        - Pas de frais sur l'envoi direct à un acheteur
                     </p>
 
                     <p class="text-left w-full">
-                        Wavo Signals sur toutes les paires
+                        - Wavo Signals sur toutes les paires
                     </p>
                 </UiLevel>
             </UiLevel>
