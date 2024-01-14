@@ -1,13 +1,13 @@
 <template>
-    <UiLevel column space="xl" id="how-it-works">
+    <UiLevel column :space="isMobile ? 'lg' : 'xl'" id="how-it-works">
         <UiTitle tag="h2" centered size="3xl">Comment ça marche ?</UiTitle>
 
-        <p class="text-white text-center w-2/3">
+        <p class="text-white leading-7 text-center w-full md:w-2/3">
             Un bot Discord alimenté par des algorithmes de trading
             professionnels adaptés au marché de la sneakers.
         </p>
 
-        <div class="grid grid-cols-3 gap-8 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <UiIcon
                 v-for="(icon, index) in operationsContent"
                 :icon-content="icon"
@@ -22,6 +22,10 @@
 </template>
 
 <script lang="ts" setup>
+defineProps<{
+    isMobile: boolean;
+}>();
+
 const operationsContent = [
     {
         path: "/img/icons/Discord.png",

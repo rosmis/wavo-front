@@ -10,7 +10,7 @@
                     />
                 </a>
 
-                <ul class="flex items-center nav-links gap-4">
+                <ul v-if="!isMobile" class="flex items-center nav-links gap-4">
                     <li>
                         <NuxtLink to="#concept">Concept</NuxtLink>
                     </li>
@@ -35,6 +35,10 @@
         </UiContainer>
     </header>
 </template>
+
+<script lang="ts" setup>
+const isMobile = useMobileBreakpoints("md");
+</script>
 
 <style scoped>
 .nav-links li a {

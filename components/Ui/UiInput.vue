@@ -11,6 +11,7 @@
             :id="label"
             :required="required"
             :placeholder="placeholder"
+            class="placeholder:text-sm"
             :class="{
                 'bg-[#1a1a1a] text-white w-full p-2 rounded-md border border-[#333333]':
                     inputStyle === 'default',

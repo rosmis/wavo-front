@@ -14,7 +14,7 @@
     ></div>
     <div
         aria-hidden="true"
-        class="-top-1 left-1/2 h-[200px] w-full max-w-[200px] md:max-w-[400px] user-select-none center pointer-events-none absolute max-w-full -translate-x-1/2 -translate-y-1/2"
+        class="-top-1 left-1/2 h-[70px] md:h-[200px] w-full max-w-[200px] md:max-w-[400px] user-select-none center pointer-events-none absolute max-w-full -translate-x-1/2 -translate-y-1/2"
         style="
             background: conic-gradient(
                     from 90deg at 50% 50%,

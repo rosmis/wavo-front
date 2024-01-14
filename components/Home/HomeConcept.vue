@@ -1,7 +1,7 @@
 <template>
     <UiLevel
         column
-        space="xl"
+        :space="isMobile ? 'lg' : 'xl'"
         class="py-20 relative border-t customBorder rounded-3xl"
         id="concept"
     >
@@ -12,7 +12,7 @@
         >
 
         <UiLevel column>
-            <p class="text-white text-center w-2/3">
+            <p class="text-white leading-7 text-center w-full md:w-2/3">
                 Une interface simple et élégante qui vous permet de commencer à
                 valider tes dépôts et tes premiers paiements en quelques minutes
                 seulement.
@@ -23,7 +23,7 @@
             >
         </UiLevel>
 
-        <div class="p-6 mt-8 rounded-xl border-c">
+        <div v-if="!isMobile" class="p-6 mt-8 rounded-xl border-c">
             <iframe
                 src="https://demo.arcade.software/YMLzXz4t6vk77O09EH2x?embed"
                 title="Discord | Get Quotes | Wavo"
@@ -37,6 +37,13 @@
         </div>
     </UiLevel>
 </template>
+
+<script lang="ts" setup>
+defineProps<{
+    isMobile: boolean;
+}>()
+</script>
+
 
 <style scoped>
 .border-c {

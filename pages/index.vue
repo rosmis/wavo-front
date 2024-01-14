@@ -2,17 +2,16 @@
     <UiContainer full>
         <UiLevel column space="2xl">
             <HomeHeader />
-            <HomeConcept />
-            <HomeMarketplace />
-            <HomeOperations />
-            <HomePricing />
+            <HomeConcept :is-mobile="isMobile" />
+            <HomeMarketplace :is-mobile="isMobile" />
+            <HomeOperations :is-mobile="isMobile" />
+            <HomePricing :is-mobile="isMobile" />
             <HomeContact />
         </UiLevel>
     </UiContainer>
 </template>
 
 <script lang="ts" setup>
-//TODO do SEO Tags once i got the infos
 useSeoMeta({
     title: "Wavo - La plateforme de revente de sneakers",
     description: "[description]",
@@ -38,4 +37,6 @@ useHead({
         },
     ],
 });
+
+const isMobile = useMobileBreakpoints("md");
 </script>

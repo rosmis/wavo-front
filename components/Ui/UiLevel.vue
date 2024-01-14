@@ -3,8 +3,7 @@
         class="flex"
         :class="[
             {
-                'flex-col sm:flex-row': breakpoint === 'sm',
-                'flex-col md:flex-row': breakpoint === 'md',
+                'flex-col md:flex-row': !column && !noMobileCol,
             },
             {
                 'flex-grow': expanded,
@@ -50,6 +49,7 @@ withDefaults(
         wrapped?: boolean;
         breakpoint?: string;
         column?: boolean;
+        noMobileCol?: boolean;
     }>(),
     {
         space: undefined,

@@ -1,7 +1,8 @@
 <template>
-    <UiLevel column space="xl" id="pricing">
-        <UiLevel>
+    <UiLevel column :space="isMobile ? 'lg' : 'xl'" id="pricing">
+        <UiLevel class="w-full" :space="isMobile ? 'sm' : null" no-mobile-col>
             <p
+                class="text-sm md:text-base"
                 :class="{
                     'text-white': isMonthlyPaiementSelected,
                     'text-[#FF6A65]': !isMonthlyPaiementSelected,
@@ -15,6 +16,7 @@
                 class="!bg-[#FF6A65]"
             />
             <p
+                class="text-sm md:text-base"
                 :class="{
                     'text-white': !isMonthlyPaiementSelected,
                     'text-[#FF6A65]': isMonthlyPaiementSelected,
@@ -24,7 +26,9 @@
             </p>
         </UiLevel>
 
-        <div class="grid gap-8 max-w-[850px] grid-cols-2">
+        <div
+            class="grid gap-12 md:gap-8 max-w-[850px] grid-cols-1 md:grid-cols-2"
+        >
             <UiLevel
                 align="left"
                 space="lg"
@@ -156,5 +160,9 @@
 </template>
 
 <script lang="ts" setup>
+defineProps<{
+    isMobile: boolean;
+}>();
+
 const isMonthlyPaiementSelected = ref(false);
 </script>
