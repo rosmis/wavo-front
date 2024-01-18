@@ -204,7 +204,7 @@ async function generateStripeCheckoutSessionUrl(pricingType: PricingTypes) {
                 body: JSON.stringify({
                     pricingType,
                 }),
-                mode: "cors",
+                mode: 'no-cors',
             }
         ).then((res) => console.log(JSON.stringify(res)));
     } catch (e) {
