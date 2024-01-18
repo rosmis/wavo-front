@@ -191,20 +191,19 @@ defineProps<{
 
 const isMonthlyPaiementSelected = ref(false);
 
-async function generateStripeCheckoutSessionUrl(pricingType: PricingTypes) {
+async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
     try {
         await fetch(
-            `${runtimeConfig.public.API_BASE_URL}/stripe/generate-checkout-session`,
+            `${runtimeConfig.public.API_BASE_URL}/stripe/checkout-session`,
             {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
                 },
                 body: JSON.stringify({
-                    pricingType,
+                    priceType,
                 }),
-                mode: 'no-cors',
+                mode: "no-cors",
             }
         ).then((res) => console.log(JSON.stringify(res)));
     } catch (e) {
