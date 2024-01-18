@@ -26,7 +26,7 @@
                         <NuxtLink to="#contact">Nous contacter</NuxtLink>
                     </li>
                     <li>
-                        <UiButton size="sm" to="google.fr" padded
+                        <UiButton size="sm" to="#pricing" padded
                             >S'abonner</UiButton
                         >
                     </li>

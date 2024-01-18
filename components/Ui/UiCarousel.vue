@@ -41,15 +41,11 @@ onMounted(() => {
     const carouselLists = carouselWrapper?.querySelectorAll("ul");
 
     carouselWrapper?.addEventListener("mouseenter", () => {
-        console.log("paused");
-
         carouselLists?.forEach((list) => {
             list.classList.add("animation-paused");
         });
     });
     carouselWrapper?.addEventListener("mouseleave", () => {
-        console.log("unpaused");
-
         carouselLists?.forEach((list) => {
             list.classList.remove("animation-paused");
         });

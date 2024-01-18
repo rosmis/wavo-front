@@ -1,6 +1,9 @@
 <template>
     <UiLevel column :space="isMobile ? 'lg' : 'xl'" id="pricing">
-        <UiLevel class="w-full md:justify-center justify-between !flex-row" :space="isMobile ? 'sm' : null">
+        <UiLevel
+            class="w-full md:justify-center justify-between !flex-row"
+            :space="isMobile ? 'sm' : null"
+        >
             <p
                 class="text-sm md:text-base"
                 :class="{
@@ -58,7 +61,16 @@
                     </p>
                 </UiLevel>
 
-                <UiButton to="google.fr">S'abonner maintenant</UiButton>
+                <UiButton
+                    @click="
+                        generateStripeCheckoutSessionUrl(
+                            isMonthlyPaiementSelected
+                                ? PricingTypes.STANDARD_MONTHLY
+                                : PricingTypes.STANDARD_YEARLY
+                        )
+                    "
+                    >S'abonner maintenant</UiButton
+                >
 
                 <UiLevel column>
                     <p class="font-bold">
@@ -131,7 +143,16 @@
                     </p>
                 </UiLevel>
 
-                <UiButton to="google.fr">S'abonner maintenant</UiButton>
+                <UiButton
+                    @click="
+                        generateStripeCheckoutSessionUrl(
+                            isMonthlyPaiementSelected
+                                ? PricingTypes.EVOLUTION_MONTHLY
+                                : PricingTypes.EVOLUTION_YEARLY
+                        )
+                    "
+                    >S'abonner maintenant</UiButton
+                >
 
                 <UiLevel column class="w-full">
                     <p class="text-left font-bold w-full">
@@ -160,9 +181,32 @@
 </template>
 
 <script lang="ts" setup>
+import { PricingTypes } from "~/types/pricingTypes";
+
+const runtimeConfig = useRuntimeConfig();
+
 defineProps<{
     isMobile: boolean;
 }>();
 
 const isMonthlyPaiementSelected = ref(false);
+
+async function generateStripeCheckoutSessionUrl(pricingType: PricingTypes) {
+    try {
+        await fetch(
+            `${runtimeConfig.value.API_BASE_URL}/stripe/generate-checkout-session`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    pricingType,
+                }),
+            }
+        ).then((res) => console.log(JSON.stringify(res)));
+    } catch (e) {
+        console.error(e);
+    }
+}
 </script>
