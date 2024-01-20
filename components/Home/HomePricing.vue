@@ -194,7 +194,7 @@ const isMonthlyPaiementSelected = ref(false);
 async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
     try {
         await fetch(
-            `${runtimeConfig.public.API_BASE_URL}/stripe/checkout-session`,
+            `/api/stripe/checkout-session`,
             {
                 method: "POST",
                 headers: {
