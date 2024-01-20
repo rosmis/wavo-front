@@ -24,21 +24,10 @@
                     class="w-full md:w-2/3"
                     icon="material-symbols:send-outline"
                     input-style="default"
+                    :loading="loading"
                     @update:modelValue="email = $event"
                     @send="submitEmail()"
                 />
-                <p
-                    v-if="isEmailInvalid"
-                    class="text-sm absolute -bottom-8 left-0 text-red-500"
-                >
-                    Veuillez rentrer un email valide
-                </p>
-                <p
-                    v-if="isEmailSent"
-                    class="text-sm absolute -bottom-8 left-0 text-green-500"
-                >
-                    Votre email a bien été envoyé
-                </p>
             </div>
 
             <UiLevel class="ratio1">
@@ -54,7 +43,13 @@
                 href="https://www.hub612.com/"
                 target="_blank"
             >
-                Accompagné par <img src="/img/icons/Logo_hub.svg" class="w-[40px]" loading="lazy" alt="logo_hub" />
+                Accompagné par
+                <img
+                    src="/img/icons/Logo_hub.svg"
+                    class="w-[40px]"
+                    loading="lazy"
+                    alt="logo_hub"
+                />
             </a>
         </UiLevel>
 
@@ -63,26 +58,25 @@
 </template>
 
 <script lang="ts" setup>
-const runtimeConfig = useRuntimeConfig();
+const toast = useToast();
 
 const email = ref("");
-
-const isEmailInvalid = ref(false);
-const isEmailSent = ref(false);
+const loading = ref(false);
 
 async function submitEmail() {
     if (!email.value) {
         return;
     }
     if (!checkEmailValidity(email.value)) {
-        isEmailInvalid.value = true;
-        resetEmailParams();
+        toast.add({ title: "Veuillez rentrer un email valide" });
 
         return;
     }
 
+    loading.value = true;
+
     try {
-        await fetch(`${runtimeConfig.public.API_BASE_URL}/contacts`, {
+        await fetch(`/api/contacts`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -90,22 +84,13 @@ async function submitEmail() {
             body: JSON.stringify({
                 email: email.value,
             }),
-        });
+        }).then(() => toast.add({ title: "Votre email a bien été envoyé" }));
     } catch (e) {
         console.error(e);
     }
 
     email.value = "";
-    isEmailSent.value = true;
-
-    resetEmailParams();
-}
-
-function resetEmailParams() {
-    setTimeout(() => {
-        isEmailInvalid.value = false;
-        isEmailSent.value = false;
-    }, 3000);
+    loading.value = false;
 }
 </script>
 

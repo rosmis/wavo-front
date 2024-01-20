@@ -23,10 +23,16 @@
         />
 
         <Icon
-            v-if="icon"
+            v-if="icon && !loading"
             :name="icon"
             class="absolute bottom-[15%] right-[1%] text-3xl p-1 hover:bg-[#333333] rounded-full cursor-pointer"
             @click="$emit('send')"
+        />
+
+        <Icon
+            v-if="loading"
+            name="line-md:loading-twotone-loop"
+            class="absolute bottom-[15%] right-[1%] text-3xl p-1 rounded-full"
         />
     </div>
 </template>
@@ -46,11 +52,12 @@ defineProps<{
     placeholder?: string;
     label?: string;
     type: string;
+    loading?: boolean;
     full?: boolean;
     icon?: string;
     required?: boolean;
 
-    inputStyle?: "default" | "outline";
+    inputStyle?: "default" | "contact";
 }>();
 
 const emit = defineEmits<{

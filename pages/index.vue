@@ -15,14 +15,10 @@
 useSeoMeta({
     title: "Wavo - La plateforme de revente de sneakers",
     description: "[description]",
-    ogTitle: "[og:title]",
+    ogTitle: "Wavo - La plateforme de revente de sneakers",
     ogDescription: "[og:description]",
     ogImage: "[og:image]",
     ogUrl: "[og:url]",
-    twitterTitle: "[twitter:title]",
-    twitterDescription: "[twitter:description]",
-    twitterImage: "[twitter:image]",
-    twitterCard: "summary",
 });
 
 useHead({
