@@ -200,12 +200,12 @@ async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                mode: "no-cors",
                 body: JSON.stringify({
                     priceType,
                 }),
-                mode: "no-cors",
             }
-        ).then((res) => console.log(JSON.stringify(res)));
+        ).then((res) => console.log(res));
     } catch (e) {
         console.error(e);
     }
