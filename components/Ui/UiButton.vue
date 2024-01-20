@@ -8,7 +8,13 @@
             'text-base': size !== 'sm',
         }"
     >
-        <slot />
+        <template v-if="!loading">
+            <slot />
+        </template>
+
+        <UiLevel v-else>
+            <Icon name="line-md:loading-twotone-loop" class="text-2xl" />
+        </UiLevel>
     </NuxtLink>
 </template>
 
@@ -16,17 +22,17 @@
 defineProps<{
     to?: string;
     targetBlank?: boolean;
+    loading?: boolean;
     iconPath?: string;
     size?: "sm";
 }>();
 </script>
-
 
 <style scoped>
 .button {
     transition: all 0.2s ease-in-out;
 }
 .button:hover {
-    background-color: #FF6A65;
+    background-color: #ff6a65;
 }
 </style>

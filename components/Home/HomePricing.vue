@@ -62,6 +62,13 @@
                 </UiLevel>
 
                 <UiButton
+                    :loading="
+                        isPaiementProcessingDict[
+                            isMonthlyPaiementSelected
+                                ? PricingTypes.STANDARD_MONTHLY
+                                : PricingTypes.STANDARD_YEARLY
+                        ]
+                    "
                     @click="
                         generateStripeCheckoutSessionUrl(
                             isMonthlyPaiementSelected
@@ -69,8 +76,9 @@
                                 : PricingTypes.STANDARD_YEARLY
                         )
                     "
-                    >S'abonner maintenant</UiButton
                 >
+                    S'abonner maintenant
+                </UiButton>
 
                 <UiLevel column>
                     <p class="font-bold">
@@ -144,6 +152,13 @@
                 </UiLevel>
 
                 <UiButton
+                    :loading="
+                        isPaiementProcessingDict[
+                            isMonthlyPaiementSelected
+                                ? PricingTypes.EVOLUTION_MONTHLY
+                                : PricingTypes.EVOLUTION_YEARLY
+                        ]
+                    "
                     @click="
                         generateStripeCheckoutSessionUrl(
                             isMonthlyPaiementSelected
@@ -151,8 +166,9 @@
                                 : PricingTypes.EVOLUTION_YEARLY
                         )
                     "
-                    >S'abonner maintenant</UiButton
                 >
+                    S'abonner maintenant
+                </UiButton>
 
                 <UiLevel column class="w-full">
                     <p class="text-left font-bold w-full">
@@ -183,15 +199,23 @@
 <script lang="ts" setup>
 import { PricingTypes } from "~/types/pricingTypes";
 
-const runtimeConfig = useRuntimeConfig();
+const toast = useToast();
 
 defineProps<{
     isMobile: boolean;
 }>();
 
 const isMonthlyPaiementSelected = ref(false);
+const isPaiementProcessingDict = ref({
+    [PricingTypes.STANDARD_MONTHLY]: false,
+    [PricingTypes.STANDARD_YEARLY]: false,
+    [PricingTypes.EVOLUTION_MONTHLY]: false,
+    [PricingTypes.EVOLUTION_YEARLY]: false,
+});
 
 async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
+    isPaiementProcessingDict.value[priceType] = true;
+
     try {
         await fetch(`/api/stripe/checkout-session`, {
             method: "POST",
@@ -206,8 +230,11 @@ async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
             .then((res) => res.json())
             .then((data) => {
                 window.location.href = data.sessionUrl;
+                isPaiementProcessingDict.value[priceType] = false;
             });
     } catch (e) {
+        toast.add({ title: `Une erreur s'est produite: ${e}` });
+        isPaiementProcessingDict.value[priceType] = false;
         console.error(e);
     }
 }
