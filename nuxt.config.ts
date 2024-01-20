@@ -6,11 +6,8 @@ export default defineNuxtConfig({
         },
     },
     nitro: {
-        devProxy: {
-            "/api": {
-                target: "https://wavo-api.onrender.com",
-                changeOrigin: true,
-            },
+        routeRules: {
+            "/api/**": { proxy: `${process.env.NUXT_WAVO_API_URL}/**` },
         },
     },
     modules: ["@vueuse/nuxt", "@nuxt/ui"],

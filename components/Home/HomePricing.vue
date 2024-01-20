@@ -193,19 +193,20 @@ const isMonthlyPaiementSelected = ref(false);
 
 async function generateStripeCheckoutSessionUrl(priceType: PricingTypes) {
     try {
-        await fetch(
-            `/api/stripe/checkout-session`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                },
-                body: JSON.stringify({
-                    priceType,
-                }),
-            }
-        ).then((res) => console.log(res));
+        await fetch(`/api/stripe/checkout-session`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+                priceType,
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                window.location.href = data.sessionUrl;
+            });
     } catch (e) {
         console.error(e);
     }
