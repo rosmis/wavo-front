@@ -9,3 +9,11 @@
         <UNotifications />
     </div>
 </template>
+
+<script lang="ts" setup>
+import { useSmoothScroll } from './composables/useSmoothScroll';
+
+onMounted(() => {
+    useSmoothScroll();
+});
+</script>

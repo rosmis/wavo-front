@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             gsap,
             Draggable,
             ScrollTrigger,
-            Power2
+            Power2,
         },
     };
 });
