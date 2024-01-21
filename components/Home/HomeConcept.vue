@@ -7,16 +7,27 @@
     >
         <UiDivider />
 
-        <UiTitle tag="h2" centered size="3xl"
-            >Beaucoup plus qu'une simple consigne.</UiTitle
-        >
+        <div class="overflow-hidden">
+            <UiTitle
+                tag="h2"
+                centered
+                size="3xl"
+                class="gs_blinds_bottom title-1"
+            >
+                Beaucoup plus qu'une simple consigne.
+            </UiTitle>
+        </div>
 
         <UiLevel column>
-            <p class="text-white leading-7 text-center w-full md:w-2/3">
-                Une interface simple et élégante qui vous permet de commencer à
-                valider tes dépôts et tes premiers paiements en quelques minutes
-                seulement.
-            </p>
+            <UiLevel class="overflow-hidden" align="center">
+                <p
+                    class="text-white leading-7 content-1 gs_blinds_bottom text-center w-full md:w-2/3"
+                >
+                    Une interface simple et élégante qui vous permet de
+                    commencer à valider tes dépôts et tes premiers paiements en
+                    quelques minutes seulement.
+                </p>
+            </UiLevel>
 
             <UiButton to="https://discord.com/invite/hh2NKyFYUn" class="mt-8"
                 >Rejoindre le discord</UiButton
@@ -39,11 +50,14 @@
 </template>
 
 <script lang="ts" setup>
+import { useScrollTrigger } from "~/composables/useScrollTrigger";
+
 defineProps<{
     isMobile: boolean;
-}>()
-</script>
+}>();
 
+onMounted(() => useScrollTrigger(["title-1", "content-1"]));
+</script>
 
 <style scoped>
 .border-c {

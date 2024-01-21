@@ -1,8 +1,14 @@
 <template>
     <UiLevel column space="xl" id="contact" class="w-full">
-        <UiTitle tag="h2" size="3xl" class="w-full text-left"
-            >Nous contacter</UiTitle
-        >
+        <div class="overflow-hidden w-full">
+            <UiTitle
+                tag="h2"
+                size="3xl"
+                class="w-full text-left gs_blinds_bottom title-4"
+            >
+                Nous contacter
+            </UiTitle>
+        </div>
 
         <UiLevel column class="w-full" space="lg">
             <label for="firstName" class="w-full">
@@ -76,6 +82,8 @@
 <script lang="ts" setup>
 const toast = useToast();
 const loading = ref(false);
+
+onMounted(() => useScrollTrigger(["title-4"]));
 
 const formData = ref([
     {
