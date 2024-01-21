@@ -47,7 +47,7 @@
                 <img
                     src="/img/vomero.png"
                     alt="nike vomero"
-                    class="w-2/3 md:w-full"
+                    class="w-2/3 md:w-full fadeIn opacity-0"
                 />
             </UiLevel>
 
@@ -79,7 +79,10 @@
 <script lang="ts" setup>
 const toast = useToast();
 
-onMounted(() => useBlindRevealAnimation("gs_blinds"));
+onMounted(() => {
+    useBlindRevealAnimation("gs_blinds");
+    useFadeInAnimation("fadeIn");
+});
 
 const email = ref("");
 const loading = ref(false);

@@ -1,5 +1,5 @@
 <template>
-    <header class="background w-full fixed top-0 left-0 right-0 z-50">
+    <header class="background w-full fixed top-0 left-0 gs_blinds gs_blinds_top right-0 z-50">
         <UiContainer full>
             <div class="flex justify-between flex-grow-0 w-full p-4">
                 <a href="#">
@@ -26,9 +26,7 @@
                         <NuxtLink to="#contact">Nous contacter</NuxtLink>
                     </li>
                     <li>
-                        <UiButton size="sm" to="#pricing"
-                            >S'abonner</UiButton
-                        >
+                        <UiButton size="sm" to="#pricing">S'abonner</UiButton>
                     </li>
                 </ul>
 
@@ -54,7 +52,10 @@ const isMobile = useMobileBreakpoints("md");
 const isMobileMenuOpen = ref(false);
 const hamburger = ref<Element | null>(null);
 
-onMounted(() => (hamburger.value = document.querySelector(".hamburger")));
+onMounted(() => {
+    hamburger.value = document.querySelector(".hamburger");
+    useBlindRevealAnimation("gs_blinds");
+});
 
 watch(isMobileMenuOpen, () => hamburger.value?.classList.toggle("toggle"));
 </script>
