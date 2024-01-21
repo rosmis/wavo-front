@@ -98,3 +98,10 @@ div[role="status"] {
 .h-1 {
     background-color: #FF6A65 !important;
 }
+
+.gs_blinds_bottom {
+    transform: translate(0, 100%);
+}
+.gs_blinds_top {
+    transform: translate(0, -100%);
+}

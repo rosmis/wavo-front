@@ -2,32 +2,45 @@
     <UiLevel column space="xl">
         <UiLevel class="h-screen relative py-28 md:py-0" space="lg">
             <div class="flex flex-col gap-6 items-start ratio2 relative">
-                <p class="text-slate-400 text-sm">
-                    Consigne digitale pour toutes tes sneakers
-                </p>
+                <div class="overflow-hidden">
+                    <p
+                        class="text-slate-400 text-sm gs_blinds_bottom gs_blinds"
+                    >
+                        Consigne digitale pour toutes tes sneakers
+                    </p>
+                </div>
 
-                <UiTitle tag="h1" class="text-3xl md:text-[3em] leading-tight"
-                    >Vends tes sneakers <br />
-                    sans les galères du resell
-                </UiTitle>
+                <div class="overflow-hidden">
+                    <UiTitle
+                        tag="h1"
+                        class="text-3xl gs_blinds_bottom gs_blinds md:text-[3em] leading-tight"
+                        >Vends tes sneakers <br />
+                        sans les galères du resell
+                    </UiTitle>
+                </div>
+                <div class="overflow-hidden">
+                    <p
+                        class="text-white text-base md:text-lg gs_blinds_bottom gs_blinds"
+                    >
+                        Reçois ton paiement avant la vente.
+                        <br />
+                        Accède à toutes les marketplaces pro sans effort.
+                    </p>
+                </div>
 
-                <p class="text-white text-base md:text-lg">
-                    Reçois ton paiement avant la vente
-                    <br />
-                    Accède à toutes les marketplaces pro sans effort.
-                </p>
-
-                <UiInput
-                    :modelValue="email"
-                    placeholder="Laisse-nous ton email"
-                    type="email"
-                    class="w-full md:w-2/3"
-                    icon="material-symbols:send-outline"
-                    input-style="default"
-                    :loading="loading"
-                    @update:modelValue="email = $event"
-                    @send="submitEmail()"
-                />
+                <div class="overflow-hidden w-full">
+                    <UiInput
+                        :modelValue="email"
+                        placeholder="Laisse-nous ton email"
+                        type="email"
+                        class="w-full md:w-2/3 gs_blinds_bottom gs_blinds"
+                        icon="material-symbols:send-outline"
+                        input-style="default"
+                        :loading="loading"
+                        @update:modelValue="email = $event"
+                        @send="submitEmail()"
+                    />
+                </div>
             </div>
 
             <UiLevel class="ratio1">
@@ -38,19 +51,25 @@
                 />
             </UiLevel>
 
-            <a
-                class="text-[#55CED5] absolute flex items-center justify-center gap-2 text-center w-full hover:underline bottom-12 -translate-x-1/2 left-1/2"
-                href="https://www.hub612.com/"
-                target="_blank"
+            <div
+                class="overflow-hidden absolute bottom-12 -translate-x-1/2 left-1/2"
             >
-                Accompagné par
-                <img
-                    src="/img/icons/Logo_hub.svg"
-                    class="w-[40px]"
-                    loading="lazy"
-                    alt="logo_hub"
-                />
-            </a>
+                <a
+                    class="flex items-center w-fit gs_blinds gs_blinds_bottom justify-center gap-2"
+                    href="https://www.hub612.com/"
+                    target="_blank"
+                >
+                    <span class="text-[#55CED5] hover:underline text-center"
+                        >Accompagné par</span
+                    >
+                    <img
+                        src="/img/icons/Logo_hub.svg"
+                        class="w-[40px]"
+                        loading="lazy"
+                        alt="logo_hub"
+                    />
+                </a>
+            </div>
         </UiLevel>
 
         <UiSocialProofs />
@@ -59,6 +78,8 @@
 
 <script lang="ts" setup>
 const toast = useToast();
+
+onMounted(() => useBlindRevealAnimation("gs_blinds"));
 
 const email = ref("");
 const loading = ref(false);
