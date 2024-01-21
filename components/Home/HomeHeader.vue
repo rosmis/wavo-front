@@ -7,19 +7,19 @@
                 </p>
 
                 <UiTitle tag="h1" class="text-3xl md:text-[3em] leading-tight"
-                    >Vendre tes sneakers <br />
+                    >Vends tes sneakers <br />
                     sans les galères du resell
                 </UiTitle>
 
                 <p class="text-white text-base md:text-lg">
-                    Paiement tellement rapide qu'il a lieu avant la vente.
+                    Reçois ton paiement avant la vente
                     <br />
                     Accède à toutes les marketplaces pro sans effort.
                 </p>
 
                 <UiInput
                     :modelValue="email"
-                    placeholder="Laisse-nous ton email pour garder contact"
+                    placeholder="Laisse-nous ton email"
                     type="email"
                     class="w-full md:w-2/3"
                     icon="material-symbols:send-outline"

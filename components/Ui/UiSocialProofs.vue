@@ -9,7 +9,7 @@
 
         <p class="text-white text-center">
             Ces revendeurs nous font confiance <br />
-            pour vendre leur paires
+            pour vendre leurs paires
         </p>
     </UiLevel>
 </template>
