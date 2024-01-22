@@ -1,16 +1,18 @@
 <template>
     <div
-        class="bg-cover bottom-8 h-14 mb-10 w-14 absolute rounded-full"
+        class="bg-cover h-14 w-14 rounded-full"
         :style="{
             'background-image': `url(${avatarUrl})`,
-            left: `${index + 1.3}rem`,
+            translate: `${translateXAvatarValues[index + 1]} 0`,
             zIndex: `${index <= 5 ? index + 1 : 14 - index}`,
         }"
     ></div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+import translateXAvatarValues from '~/types/translateXAvatarValues';
+
+defineProps<{
     avatarUrl: string;
     index: number;
 }>();

@@ -1,4 +1,4 @@
-import { gsap, Power2 } from "gsap";
+import { gsap, Power2, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Draggable } from "gsap/Draggable";
@@ -14,6 +14,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             Draggable,
             ScrollTrigger,
             Power2,
+            Power3,
         },
     };
 });
