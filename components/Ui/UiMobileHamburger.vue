@@ -30,7 +30,7 @@
             <UiButton
                 class="text-xl"
                 size="sm"
-                to="google.fr"
+                to="#pricing"
                 padded
                 @click="$emit('close')"
             >
