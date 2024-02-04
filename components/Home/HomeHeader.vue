@@ -52,7 +52,7 @@
             </UiLevel>
 
             <div
-                class="overflow-hidden absolute bottom-12 -translate-x-1/2 left-1/2"
+                class="overflow-hidden absolute flex justify-center bottom-12 md:w-fit w-full -translate-x-1/2 left-1/2"
             >
                 <a
                     class="flex items-center w-fit gs_blinds gs_blinds_bottom justify-center gap-2"
@@ -72,11 +72,15 @@
             </div>
         </UiLevel>
 
-        <UiSocialProofs />
+        <UiSocialProofs :is-mobile="isMobile" />
     </UiLevel>
 </template>
 
 <script lang="ts" setup>
+defineProps<{
+    isMobile: boolean;
+}>();
+
 const toast = useToast();
 
 onMounted(() => {
