@@ -6,7 +6,7 @@ export default defineNuxtConfig({
             "/hubspot/**": { proxy: `${process.env.NUXT_HUBSPOT_FORM_URL}/**` },
         },
     },
-    modules: ["@vueuse/nuxt", "@nuxt/ui"],
+    modules: ["@vueuse/nuxt", "@nuxt/ui", "@nuxtjs/sitemap"],
     devtools: { enabled: true },
     css: ["~/assets/css/main.css"],
     postcss: {

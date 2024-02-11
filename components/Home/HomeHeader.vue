@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column space="xl">
+    <UiLevel column space="xl" class="w-full">
         <UiLevel class="h-screen relative py-28 md:py-0" space="lg">
             <div class="flex flex-col gap-6 items-start ratio2 relative">
                 <div class="overflow-hidden">

@@ -30,7 +30,7 @@ const props = defineProps<{
     isMobile: boolean;
 }>();
 
-const { $gsap: gsap, $Power3: Power3 } = useNuxtApp();
+const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
 
 onMounted(() => (avatarRefs.value = document.querySelectorAll(".avatar")));
 
@@ -51,7 +51,7 @@ function playAnimation(isMouseHovered: boolean) {
                 ? `${updatedHoverTranslateValue}rem`
                 : translateXAvatarValues.value[index + 1],
             duration: 1,
-            ease: Power3.easeInOut,
+            ease: Power4.easeInOut,
         });
     });
 }
