@@ -12,6 +12,8 @@
 </template>
 
 <script lang="ts" setup>
+const route = useRoute();
+
 useSeoMeta({
     title: "Wavo - La plateforme de revente de sneakers",
     description: "[description]",
@@ -30,6 +32,10 @@ useHead({
             rel: "icon",
             type: "image/x-icon",
             href: "/favicon.ico",
+        },
+        {
+            rel: "canonical",
+            href: "https://wavo-app.com" + route.path,
         },
     ],
 });
