@@ -12,7 +12,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useAxeptioCookie } from "~/composables/useAxeptioCookie";
+
 const route = useRoute();
+onMounted(() => useAxeptioCookie());
 
 useSeoMeta({
     title: "Wavo - La plateforme de revente de sneakers",

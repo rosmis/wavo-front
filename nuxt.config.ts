@@ -6,6 +6,11 @@ export default defineNuxtConfig({
             "/hubspot/**": { proxy: `${process.env.NUXT_HUBSPOT_FORM_URL}/**` },
         },
     },
+    runtimeConfig: {
+        public: {
+            axeptioClientId: process.env.NUXT_AXEPTIO_CLIENT_ID,
+        },
+    },
     modules: ["@vueuse/nuxt", "@nuxt/ui", "@nuxtjs/sitemap"],
     devtools: { enabled: true },
     css: ["~/assets/css/main.css"],
