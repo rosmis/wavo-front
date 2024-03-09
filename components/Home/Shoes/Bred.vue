@@ -17,15 +17,15 @@ const shoeRef = shallowRef(null);
 
 const { onLoop } = useRenderLoop();
 
-onLoop(({ delta, elapsed }) => {
-    if (shoeRef.value) {
-        // shoeRef.value.rotation.y += delta;
+// onLoop(({ delta, elapsed }) => {
+//     if (shoeRef.value) {
+//         // shoeRef.value.rotation.y += delta;
 
-        gsap.to(shoeRef.value.rotation, {
-            duration: 1,
-            y: '+=0.01',
-            ease: Power4.easeInOut,
-        });
-    }
-});
+//         gsap.to(shoeRef.value.rotation, {
+//             duration: 1,
+//             y: '+=0.01',
+//             ease: Power4.easeInOut,
+//         });
+//     }
+// });
 </script>
