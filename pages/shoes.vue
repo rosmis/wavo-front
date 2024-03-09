@@ -7,12 +7,18 @@
             <HomeShoesWrapper />
         </Suspense>
 
-        <TresDirectionalLight
-            color="#F78B3D"
-            :position="[3, 3, 3]"
+        <TresAmbientLight :color="'#ffffff'" :intensity="0.5" />
+
+        <TresPointLight
+            :color="'#00aaff'"
             :intensity="1"
+            :position="[10, 10, 10]"
         />
-        <TresAmbientLight :intensity="2" />
+        <TresPointLight
+            :color="'#ffaa00'"
+            :intensity="100"
+            :position="[-10, -10, -10]"
+        />
     </TresCanvas>
 </template>
 
@@ -21,7 +27,7 @@ import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from "three";
 
 const gl = {
     clearColor: "#05050a",
-    shadows: true,
+    shadows: false,
     alpha: false,
     shadowMapType: BasicShadowMap,
     outputColorSpace: SRGBColorSpace,

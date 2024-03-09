@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+// import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
 
@@ -17,9 +17,11 @@ const shoeRef = shallowRef(null);
 let model = shallowRef(null);
 
 const loadModel = async (path) => {
-    const { scene } = await useLoader(GLTFLoader, path, undefined, (xhr) => {
-        console.log(`model : ${(xhr.loaded / xhr.total) * 100}% loaded`);
-    });
+    // const { scene } = await useLoader(GLTFLoader, path, undefined, (xhr) => {
+    //     console.log(`model : ${(xhr.loaded / xhr.total) * 100}% loaded`);
+    // });
+
+    const { scene } = await useGLTF(path, { draco: true });
 
     model.value = scene;
     nextTick(() => {
