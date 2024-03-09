@@ -1,11 +1,12 @@
 <template>
-    <p>test</p>
     <TresCanvas v-bind="gl">
-        <TresPerspectiveCamera :position="[2, 2, 9]" :look-at="[0, 2, 0]" />
-        <OrbitControls />
+        <TresPerspectiveCamera :position="[2, 25, 50]" :look-at="[0, 2, 0]" />
+        <!-- <OrbitControls /> -->
+
         <Suspense>
-            <HomeShoesBred />
+            <HomeShoesWrapper />
         </Suspense>
+
         <TresDirectionalLight
             color="#F78B3D"
             :position="[3, 3, 3]"
@@ -19,7 +20,7 @@
 import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from "three";
 
 const gl = {
-    clearColor: "#F78B3D",
+    clearColor: "#05050a",
     shadows: true,
     alpha: false,
     shadowMapType: BasicShadowMap,
