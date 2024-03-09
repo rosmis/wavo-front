@@ -1,10 +1,10 @@
 <template>
     <div class="custom-bg flex flex-col gap-16 items-center">
-        <Navbar />
+        <!-- <Navbar /> -->
 
         <NuxtPage />
 
-        <Footer />
+        <!-- <Footer /> -->
 
         <UNotifications />
     </div>
