@@ -11,7 +11,10 @@ export default defineNuxtConfig({
             axeptioClientId: process.env.NUXT_AXEPTIO_CLIENT_ID,
         },
     },
-    modules: ["@vueuse/nuxt", "@nuxt/ui", "@nuxtjs/sitemap"],
+    modules: ["@vueuse/nuxt", "@nuxt/ui", "@nuxtjs/sitemap", "@tresjs/nuxt"],
+    tres: {
+        devtools: true,
+    },
     devtools: { enabled: true },
     css: ["~/assets/css/main.css"],
     postcss: {

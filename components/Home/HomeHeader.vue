@@ -1,5 +1,18 @@
 <template>
     <UiLevel column space="xl" class="w-full">
+        <img
+            alt="Light ray background"
+            fetchpriority="high"
+            width="1000"
+            height="1000"
+            decoding="async"
+            data-nimg="1"
+            class="pointer-events-none absolute -top-20 left-0 right-0 z-0 mx-auto hidden h-full w-full select-none md:block"
+            style="color: transparent"
+            srcset="/img/bghero_md.webp 1x, /img/bghero_lg.webp 2x"
+            src="/img/bghero_lg.webp"
+        />
+
         <UiLevel class="h-screen relative py-28 md:py-0" space="lg">
             <div class="flex flex-col gap-6 items-start ratio2 relative">
                 <div class="overflow-hidden">
@@ -18,6 +31,7 @@
                         sans les galères du resell
                     </UiTitle>
                 </div>
+
                 <div class="overflow-hidden">
                     <p
                         class="text-white text-base md:text-lg gs_blinds_bottom gs_blinds"
@@ -43,13 +57,9 @@
                 </div>
             </div>
 
-            <UiLevel class="ratio1">
-                <img
-                    src="/img/vomero.png"
-                    alt="nike vomero"
-                    class="w-2/3 md:w-full fadeIn opacity-0"
-                />
-            </UiLevel>
+            <div class="flex-1 w-full ratio1">
+                <HomeShoesWrapper />
+            </div>
 
             <div
                 class="overflow-hidden absolute flex justify-center bottom-12 md:w-fit w-full -translate-x-1/2 left-1/2"
@@ -85,7 +95,6 @@ const toast = useToast();
 
 onMounted(() => {
     useBlindRevealAnimation("gs_blinds");
-    useFadeInAnimation("fadeIn");
 });
 
 const email = ref("");
@@ -124,7 +133,7 @@ async function submitEmail() {
 
 <style scoped>
 .ratio1 {
-    flex: 1;
+    aspect-ratio: 1 / 1;
 }
 
 .ratio2 {
