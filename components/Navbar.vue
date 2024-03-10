@@ -1,7 +1,9 @@
 <template>
-    <header class="background w-full fixed top-0 left-0 gs_blinds gs_blinds_top right-0 z-50">
+    <header
+        class="fixed top-0 right-0 left-0 border-b w-full gs_blinds gs_blinds_top border-white/10 bg-black/50 backdrop-blur-sm z-50"
+    >
         <UiContainer full>
-            <div class="flex justify-between flex-grow-0 w-full p-4">
+            <div class="flex justify-between flex-grow-0 w-full py-2 px-4">
                 <a href="#">
                     <img
                         class="md:w-[150px] w-[120px]"
