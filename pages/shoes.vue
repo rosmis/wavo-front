@@ -7,23 +7,23 @@
             <HomeShoesWrapper />
         </Suspense>
 
-        <TresAmbientLight :color="'#ffffff'" :intensity="0.5" />
+        <TresAmbientLight :color="'#ffffff'" :intensity="0.7" />
 
         <TresPointLight
-            :color="'#00aaff'"
-            :intensity="1"
+            :color="'#ffffff'"
+            :intensity="10"
             :position="[10, 10, 10]"
         />
         <TresPointLight
-            :color="'#ffaa00'"
+            :color="'#ffffff'"
             :intensity="100"
-            :position="[-10, -10, -10]"
+            :position="[-10, 10, -10]"
         />
     </TresCanvas>
 </template>
 
 <script lang="ts" setup>
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from "three";
+import { BasicShadowMap, NoToneMapping, SRGBColorSpace, Vector3 } from "three";
 
 const gl = {
     clearColor: "#05050a",

@@ -21,7 +21,9 @@ const loadModel = async (path) => {
     //     console.log(`model : ${(xhr.loaded / xhr.total) * 100}% loaded`);
     // });
 
-    const { scene } = await useGLTF(path, { draco: true });
+    const { scene } = await useGLTF(path, { draco: true }, (xhr) => {
+        console.log(`model : ${xhr}`);
+    });
 
     model.value = scene;
     nextTick(() => {
@@ -46,7 +48,7 @@ const loadModel = async (path) => {
 
 watch(
     () => props.path,
-    async (newPath) => {
+    (newPath) => {
         if (!shoeRef.value) return;
 
         gsap.to(shoeRef.value.rotation, {

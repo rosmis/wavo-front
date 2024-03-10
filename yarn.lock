@@ -6805,7 +6805,7 @@ three-stdlib@^2.29.4:
 
 three@^0.162.0:
   version "0.162.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.162.0.tgz"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.162.0.tgz#b15a511f1498e0c42d4d00bbb411c7527b06097e"
   integrity sha512-xfCYj4RnlozReCmUd+XQzj6/5OjDNHBy5nT6rVwrOKGENAvpXe2z1jL+DZYaMu4/9pNsjH/4Os/VvS9IrH7IOQ==
 
 through2@^0.6.3:
