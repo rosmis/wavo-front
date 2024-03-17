@@ -102,6 +102,7 @@ const loading = ref(false);
 
 async function submitEmail() {
     if (!email.value) {
+        toast.add({ title: "Veuillez rentrer un email" });
         return;
     }
     if (!checkEmailValidity(email.value)) {

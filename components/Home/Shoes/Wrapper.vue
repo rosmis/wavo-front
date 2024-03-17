@@ -3,7 +3,7 @@
         <TresPerspectiveCamera :position="[2, 25, 50]" :look-at="[0, 2, 0]" />
 
         <Suspense>
-            <HomeShoesBred :path="assetPathsDict[index]" />
+            <HomeShoesBred :path="assetPathsDict[index % 5]" />
         </Suspense>
 
         <TresMesh @click="() => index++" :position="[2, 5, 20]">
@@ -41,7 +41,10 @@ const gl = {
 const index = ref(0);
 
 const assetPathsDict = {
-    0: "/img/shoes/Jordan4_FireRed.glb",
-    1: "/img/shoes/Jordan4MilitaryBlack.glb",
+    0: "/img/shoes/aj1.glb",
+    1: "/img/shoes/aj4_firered.glb",
+    2: "/img/shoes/dunk_blue.glb",
+    3: "/img/shoes/aj4_military_black.glb",
+    4: "/img/shoes/dunk_triple_pink.glb",
 };
 </script>
