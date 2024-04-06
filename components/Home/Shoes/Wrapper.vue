@@ -3,10 +3,13 @@
         <TresPerspectiveCamera :position="[2, 25, 50]" :look-at="[0, 2, 0]" />
 
         <Suspense>
-            <HomeShoesBred :path="assetPathsDict[index % 5]" />
+            <HomeShoesBred
+                :path="assetPathsDict[index % 4]"
+                @loaded="$emit('loaded', true)"
+            />
         </Suspense>
 
-        <TresMesh @click="() => index++" :position="[2, 5, 20]">
+        <TresMesh :position="[2, 5, 20]">
             <TresBoxGeometry :args="[40, 30, 11]" />
             <!-- <TresMeshBasicMaterial color="blue" /> -->
             <TresMeshBasicMaterial color="blue" :opacity="0" transparent />
@@ -28,7 +31,11 @@
 </template>
 
 <script lang="ts" setup>
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace, Vector3 } from "three";
+import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from "three";
+
+defineProps<{
+    index: number;
+}>();
 
 const gl = {
     shadows: false,
@@ -38,13 +45,12 @@ const gl = {
     toneMapping: NoToneMapping,
 };
 
-const index = ref(0);
+// const index = ref(0);
 
 const assetPathsDict = {
     0: "/img/shoes/aj1.glb",
     1: "/img/shoes/aj4_firered.glb",
-    2: "/img/shoes/dunk_blue.glb",
-    3: "/img/shoes/aj4_military_black.glb",
-    4: "/img/shoes/dunk_triple_pink.glb",
+    2: "/img/shoes/aj4_military_black.glb",
+    3: "/img/shoes/dunk_triple_pink.glb",
 };
 </script>

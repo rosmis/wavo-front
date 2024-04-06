@@ -11,6 +11,10 @@ const props = defineProps<{
     path: string;
 }>();
 
+const emit = defineEmits<{
+    (event: "loaded"): void;
+}>();
+
 onMounted(async () => await loadModel(props.path));
 
 const shoeRef = shallowRef(null);
@@ -21,9 +25,9 @@ const loadModel = async (path) => {
     //     console.log(`model : ${(xhr.loaded / xhr.total) * 100}% loaded`);
     // });
 
-    const { scene } = await useGLTF(path, { draco: true }, (xhr) => {
-        console.log(`model : ${xhr}`);
-    });
+    const { scene } = await useGLTF(path, { draco: true });
+
+    emit("loaded");
 
     model.value = scene;
     nextTick(() => {
@@ -43,7 +47,6 @@ const loadModel = async (path) => {
             }
         );
     });
-    console.log("model loaded", model.value);
 };
 
 watch(

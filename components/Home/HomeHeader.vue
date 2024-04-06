@@ -57,8 +57,32 @@
                 </div>
             </div>
 
-            <div class="flex-1 w-full ratio1">
-                <HomeShoesWrapper />
+            <div
+                class="flex-1 ratio1 relative w-[400px]"
+                @click="handleShoeIndexChange()"
+            >
+                <HomeShoesWrapper
+                    v-if="displayShoesAnimation"
+                    :index="shoeIndex"
+                    @loaded="isAssetLoaded = $event"
+                />
+
+                <UiInteractiveHover
+                    v-if="isAssetLoaded"
+                    @click="handleShoeIndexChange()"
+                />
+
+                <client-only>
+                    <Vue3Lottie
+                        :animation-data="Loader"
+                        :height="200"
+                        :width="200"
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1/2 transition-opacity duration-300"
+                        :class="{
+                            'opacity-100 ': !isAssetLoaded,
+                        }"
+                    />
+                </client-only>
             </div>
 
             <div
@@ -95,16 +119,30 @@
 </template>
 
 <script lang="ts" setup>
+import Loader from "../../public/img/loader.json";
+
 defineProps<{
     isMobile: boolean;
 }>();
 
 const toast = useToast();
 
-onMounted(() => useBlindRevealAnimation("gs_blinds"));
+const isAssetLoaded = ref(false);
+const displayShoesAnimation = ref(false);
+
+onMounted(() => {
+    useBlindRevealAnimation("gs_blinds");
+    setTimeout(() => (displayShoesAnimation.value = true), 500);
+});
 
 const email = ref("");
 const loading = ref(false);
+const shoeIndex = ref(0);
+
+const handleShoeIndexChange = () => {
+    shoeIndex.value++;
+    setTimeout(() => (isAssetLoaded.value = false), 1200);
+};
 
 async function submitEmail() {
     if (!email.value) {

@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@types/three": "^0.162.0",
-        "nuxt": "^3.9.0",
+        "nuxt": "^3.10.0",
         "nuxt-icon": "^0.6.8",
         "vue": "^3.4.6",
         "vue-router": "^4.2.5"
@@ -29,7 +29,8 @@
         "postcss": "^8.4.33",
         "tailwindcss": "^3.4.1",
         "three": "^0.162.0",
-        "tweakpane": "^4.0.3"
+        "tweakpane": "^4.0.3",
+        "vue3-lottie": "^3.3.0"
     },
     "resolutions": {
         "string-width": "4.2.3"

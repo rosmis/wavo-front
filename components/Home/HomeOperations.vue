@@ -36,9 +36,7 @@
             />
         </div>
 
-        <NuxtLink to="#contact" class="mt-8 px-8">
-            <UiButton size="sm">Commencer</UiButton>
-        </NuxtLink>
+        <UiButton size="sm" to="#contact">Commencer</UiButton>
     </UiLevel>
 </template>
 
