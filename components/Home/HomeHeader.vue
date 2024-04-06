@@ -68,7 +68,7 @@
                 />
 
                 <UiInteractiveHover
-                    v-if="isAssetLoaded"
+                    :is-assets-loaded="isAssetLoaded"
                     @click="handleShoeIndexChange()"
                 />
 

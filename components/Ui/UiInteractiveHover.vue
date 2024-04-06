@@ -8,8 +8,8 @@
             class="cursor-pointer hover:scale-125 transition-transform duration-300 absolute bottom-16 right-10 z-20"
             :class="{
                 'scale-up': isClicked,
-                // 'trigger-opacity-down': isOpacityDown,
-                'trigger-opacity': isOpacity,
+                'opacity-up': !isClicked,
+                'hidden': !props.isAssetsLoaded,
             }"
             @click="toggleScale()"
         />
@@ -23,28 +23,27 @@ const emit = defineEmits<{
     (event: "click"): void;
 }>();
 
-const isClicked = ref(false);
-const isOpacity = ref(false);
-const isOpacityDown = ref(true);
+const props = defineProps<{
+    isAssetsLoaded: boolean;
+}>();
 
-onMounted(() => {
-    setTimeout(() => {
-        isOpacityDown.value = false;
-    }, 1000);
-});
+const isClicked = ref(false);
 
 onBeforeUnmount(() => console.log("unmounted"));
 
+watch(
+    () => props.isAssetsLoaded,
+    () => {
+        if (isClicked.value) {
+            isClicked.value = false;
+        }
+    }
+);
+
 const toggleScale = () => {
     isClicked.value = true;
-    isOpacity.value = true;
 
     emit("click");
-
-    setTimeout(() => {
-        isClicked.value = false;
-        isOpacity.value = false;
-    }, 1000);
 };
 </script>
 
@@ -55,22 +54,15 @@ const toggleScale = () => {
     }
     50% {
         transform: scale(1.7);
+        opacity: 1;
     }
     100% {
         transform: scale(1.25);
-    }
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 1;
-    }
-    100% {
         opacity: 0;
     }
 }
 
-@keyframes opacity-down {
+@keyframes opacity-up {
     0% {
         opacity: 0;
     }
@@ -79,15 +71,13 @@ const toggleScale = () => {
     }
 }
 
-.trigger-opacity {
-    animation: opacity 1s ease-in-out;
-}
-
-.trigger-opacity-down {
-    animation: opacity-down 0.2s ease-in-out;
+.opacity-up {
+    animation: opacity-up 1s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .scale-up {
     animation: scale-up 0.6s ease-in-out;
+    animation-fill-mode: forwards;
 }
 </style>
