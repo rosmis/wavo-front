@@ -19,7 +19,7 @@ defineProps<{
 
 <style scoped>
 .custom-container-blog {
-    max-width: 1170px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }

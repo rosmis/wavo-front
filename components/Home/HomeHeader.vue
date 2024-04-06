@@ -19,33 +19,33 @@
                     <p
                         class="text-slate-400 text-sm gs_blinds_bottom gs_blinds"
                     >
-                        Consigne digitale pour toutes tes sneakers
+                        L’outil partenaire de vos vendeurs
                     </p>
                 </div>
 
                 <div class="overflow-hidden">
                     <UiTitle
                         tag="h1"
-                        class="text-3xl gs_blinds_bottom gs_blinds md:text-[3em] leading-tight"
-                        >Vends tes sneakers <br />
-                        sans les galères du resell
+                        class="text-3xl gs_blinds_bottom gs_blinds md:text-[2.5em] leading-tight"
+                        >Des paiements en avance,<br />
+                        vos vendeurs adorent.
                     </UiTitle>
                 </div>
 
                 <div class="overflow-hidden">
-                    <p
-                        class="text-white text-base md:text-lg gs_blinds_bottom gs_blinds"
-                    >
-                        Reçois ton paiement avant la vente.
+                    <p class="text-white !leading-7 gs_blinds_bottom gs_blinds">
+                        Avec Wavo, offrez une avance de paiement instantanée,
                         <br />
-                        Accède à toutes les marketplaces pro sans effort.
+                        directement sur votre plateforme, pour croître avec vos
+                        <br />
+                        vendeurs.
                     </p>
                 </div>
 
                 <div class="overflow-hidden w-full">
                     <UiInput
                         :modelValue="email"
-                        placeholder="Laisse-nous ton email"
+                        placeholder="Recevoir vos accès sandbox gratuitement"
                         type="email"
                         class="w-full md:w-2/3 gs_blinds_bottom gs_blinds"
                         icon="material-symbols:send-outline"
@@ -62,23 +62,31 @@
             </div>
 
             <div
-                class="overflow-hidden absolute flex justify-center bottom-12 md:w-fit w-full -translate-x-1/2 left-1/2"
+                class="overflow-hidden absolute flex justify-center bottom-8 items-center gap-2 md:w-fit w-full -translate-x-1/2 left-1/2"
             >
-                <a
-                    class="flex items-center w-fit gs_blinds gs_blinds_bottom justify-center gap-2"
-                    href="https://www.hub612.com/"
-                    target="_blank"
-                >
-                    <span class="text-[#55CED5] hover:underline text-center"
+                <UiLevel space="sm" class="gs_blinds gs_blinds_bottom p-4">
+                    <span class="text-slate-400 text-center"
                         >Accompagné par</span
                     >
-                    <img
-                        src="/img/icons/Logo_hub.svg"
-                        class="w-[40px]"
-                        loading="lazy"
-                        alt="logo_hub"
-                    />
-                </a>
+
+                    <a href="https://www.hub612.com/" target="_blank">
+                        <img
+                            src="/img/icons/Logo_hub.svg"
+                            class="w-[40px]"
+                            loading="lazy"
+                            alt="logo_hub"
+                        />
+                    </a>
+
+                    <a href="https://www.lafrenchtech-stl.com/" target="_blank">
+                        <img
+                            src="/img/icons/french_tech.png"
+                            class="w-[40px] -mt-2"
+                            loading="lazy"
+                            alt="logo_ft"
+                        />
+                    </a>
+                </UiLevel>
             </div>
         </UiLevel>
 
@@ -93,9 +101,7 @@ defineProps<{
 
 const toast = useToast();
 
-onMounted(() => {
-    useBlindRevealAnimation("gs_blinds");
-});
+onMounted(() => useBlindRevealAnimation("gs_blinds"));
 
 const email = ref("");
 const loading = ref(false);

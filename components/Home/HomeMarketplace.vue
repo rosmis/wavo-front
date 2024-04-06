@@ -13,8 +13,7 @@
                 size="3xl"
                 class="gs_blinds_bottom title-2"
             >
-                Booste tes ventes grâce <br />
-                aux marketplaces.
+                Pourquoi devenir une plateforme partenaire de Wavo ?
             </UiTitle>
         </div>
 
@@ -22,14 +21,12 @@
             <p
                 class="text-white leading-7 text-center gs_blinds_bottom content-2 w-full md:w-2/3"
             >
-                Intégré aux plus grandes marketplaces professionnelles, ainsi
-                que les plateformes spécialisées sneakers ou encore en lien
-                étroit avec +20 resell shops. Wavo s'occupe de vendre tes
-                sneakers consignées partout, au meilleur prix
+                Proposez à vos vendeurs d’être payés toute suite sans décaisser
+                1 centime. Wavo est une API simple et légère qui permet de
+                libérer financièrement vos vendeurs en leur offrant un paiement
+                anticipé.
             </p>
         </UiLevel>
-
-        <UiCarousel :brand-urls="brandUrls" padded />
 
         <div class="mx-8 md:mx-auto grid gap-8 grid-cols-1 md:grid-cols-3">
             <UiCard v-for="(item, index) in items" :key="index" :item="item" />
@@ -47,8 +44,4 @@ defineProps<{
 onMounted(() => useScrollTrigger(["title-2", "content-2"]));
 
 const items = ref(cardsContent);
-const brandUrls: string[] = Array.from(
-    { length: 18 },
-    () => "/img/brands/Brand"
-);
 </script>

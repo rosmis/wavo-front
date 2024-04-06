@@ -1,5 +1,12 @@
 <template>
-    <UiLevel column :space="isMobile ? 'lg' : 'xl'" id="how-it-works">
+    <UiLevel
+        column
+        :space="isMobile ? 'lg' : 'xl'"
+        id="how-it-works"
+        class="relative border-t customBorder py-20 rounded-3xl"
+    >
+        <UiDivider />
+
         <div class="overflow-hidden">
             <UiTitle
                 tag="h2"
@@ -7,7 +14,7 @@
                 size="3xl"
                 class="gs_blinds_bottom title-3"
             >
-                Comment ça marche ?
+                Expérience fluide, facile à mettre place
             </UiTitle>
         </div>
 
@@ -15,8 +22,9 @@
             <p
                 class="text-white leading-7 gs_blinds_bottom content-3 text-center w-full md:w-2/3"
             >
-                Un bot Discord alimenté par des algorithmes de trading
-                professionnels adaptés au marché de la sneakers.
+                En quelques jours seulement, vos équipes techniques et
+                commerciales seront en mesure d’offrir des paiements anticipés à
+                vos vendeurs.
             </p>
         </UiLevel>
 
@@ -28,9 +36,9 @@
             />
         </div>
 
-        <UiButton to="https://discord.com/invite/hh2NKyFYUn" class="mt-8"
-            >Rejoindre le discord</UiButton
-        >
+        <NuxtLink to="#contact" class="mt-8 px-8">
+            <UiButton size="sm">Commencer</UiButton>
+        </NuxtLink>
     </UiLevel>
 </template>
 
@@ -43,16 +51,16 @@ onMounted(() => useScrollTrigger(["title-3", "content-3"]));
 
 const operationsContent = [
     {
-        path: "/img/icons/Discord.png",
-        title: "Rejoins notre serveur discord",
+        path: "/img/icons/prise-de-courant.png",
+        title: "Intégration low-code directement dans votre plateforme",
     },
     {
-        path: "/img/icons/Bot.png",
-        title: "Renseigne tes sneakers en entrant le modèle ou le SKU",
+        path: "/img/icons/boulon.png",
+        title: "Avances instantanées en 1 clic lorsqu’un vendeur dépose un produit",
     },
     {
-        path: "/img/icons/Sneaker.png",
-        title: "Accepte notre offre instantanée et envoie-nous tes produits",
+        path: "/img/icons/verifier.png",
+        title: "Validation & paiement avec une simple requête après l’authentification",
     },
 ];
 </script>

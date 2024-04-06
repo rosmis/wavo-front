@@ -28,7 +28,7 @@
                         <NuxtLink to="#contact">Nous contacter</NuxtLink>
                     </li>
                     <li>
-                        <UiButton size="sm" to="#pricing">S'abonner</UiButton>
+                        <UiButton size="sm" to="#contact">Demander une démo</UiButton>
                     </li>
                 </ul>
 

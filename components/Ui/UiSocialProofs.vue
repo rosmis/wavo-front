@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column class="relative mt-6">
+    <UiLevel column class="relative mt-6 mb-4">
         <UiLevel
             space="none"
             class="pt-8 pb-4 md:flex-row !flex-row"
@@ -15,9 +15,8 @@
             />
         </UiLevel>
 
-        <p class="text-white test text-center">
-            Ces revendeurs nous font confiance <br />
-            pour vendre leurs paires
+        <p class="text-white test text-center z-10">
+            Ces revendeurs nous font confiance
         </p>
     </UiLevel>
 </template>

@@ -14,7 +14,7 @@
                 size="3xl"
                 class="gs_blinds_bottom title-1"
             >
-                Beaucoup plus qu'une simple consigne.
+                Pourquoi devenir une plateforme partenaire de Wavo ?
             </UiTitle>
         </div>
 
@@ -23,9 +23,10 @@
                 <p
                     class="text-white leading-7 content-1 gs_blinds_bottom text-center w-full md:w-2/3"
                 >
-                    Une interface simple et élégante qui vous permet de
-                    commencer à valider tes dépôts et tes premiers paiements en
-                    quelques minutes seulement.
+                    Proposez à vos vendeurs d’être payés toute suite sans
+                    décaisser 1 centime. Wavo est une API simple et légère qui
+                    permet de libérer financièrement vos vendeurs en leur
+                    offrant un paiement anticipé.
                 </p>
             </UiLevel>
 

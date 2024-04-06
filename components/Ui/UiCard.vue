@@ -3,7 +3,7 @@
         align="left"
         column
         space="lg"
-        class="border border-white relative p-8 pt-20 pb-32 rounded-xl mt-8 card"
+        class="border border-white relative rounded-xl p-8 mt-8 card"
         :style="{
             background: `linear-gradient(310deg, 
                 ${item.backgroundColor[0]} -2.15%, 
@@ -15,8 +15,19 @@
         @mouseover="hovered = true"
         @mouseleave="hovered = false"
     >
-        <h3 class="text-lg z-10 text-center">{{ item.title }}</h3>
-        <p class="text-left leading-8 z-10 text-white">{{ item.content }}</p>
+        <img
+            :src="item.imageUrl"
+            :alt="item.title"
+            loading="lazy"
+            class="z-10 flex-1 max-w-[15rem]"
+        />
+
+        <div class="flex flex-col gap-2 flex-1 w-full">
+            <h3 class="text-lg z-10 text-center">{{ item.title }}</h3>
+            <p class="text-center leading-7 z-10 text-white">
+                {{ item.content }}
+            </p>
+        </div>
     </UiLevel>
 </template>
 
@@ -24,6 +35,7 @@
 interface Card {
     title: string;
     content: string;
+    imageUrl: string;
     backgroundColor: string[];
 }
 

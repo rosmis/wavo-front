@@ -1,21 +1,24 @@
 const cardsContent = [
     {
-        title: "Maximisez vos ventes",
+        title: "Boostez vos volumes",
         content:
-            "Wavo maximise/optimise le listing des paires de centaines de revendeurs professionnels sur le plus grand nombre de plateformes",
+            "Répondez aux défis de trésorerie de vos vendeurs et renforcez leur usage de votre service",
+        imageUrl: "img/illustrations/Wavos_GoTo 1.png",
         backgroundColor: ["#FF6A65", "#C05653", "#05050a", "#05050a"],
     },
     {
-        title: "Optimisez votre trésorerie",
+        title: "Fidélisez vos clients",
         content:
-            "Avec l'accompte immédiat (Stocksplit Pay), Wavo permet aux revendeurs professionnels d'optimiser leur trésorerie dès aujourd'hui pour acquérir des nouvelles paires demain.",
+            "Améliorez votre satisfaction client et votre image de marque.",
+        imageUrl: "img/illustrations/Wavos_Confirm 1.png",
         backgroundColor: ["#55CED5", "#49A1A7", "#05050a", "#05050a"],
     },
     {
-        title: "Externalisez votre logistique",
+        title: "Retrouvez des prix attractifs",
         content:
-            "Wavo facilite toute la gestion logistique et comptable des revendeurs professionnels afin qu'ils puissent se concentrer sur l'essentiel : la prochaine pépite à dénicher !",
-        backgroundColor: ["#FF9996", "#A76A69", "#05050a", "#05050a", ],
+            "Des prix plus compétitifs en donnant une autre option que le bon d’achat.",
+        imageUrl: "img/illustrations/Wavos_Banque 1.png",
+        backgroundColor: ["#FF9996", "#A76A69", "#05050a", "#05050a"],
     },
 ];
 

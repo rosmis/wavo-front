@@ -1,9 +1,9 @@
 <template>
     <UiContainer full class="overflow-x-hidden">
-        <UiLevel column space="2xl">
+        <UiLevel column space="xl">
             <HomeHeader :is-mobile="isMobile" />
-            <HomeConcept :is-mobile="isMobile" />
             <HomeMarketplace :is-mobile="isMobile" />
+            <HomePlatforms :is-mobile="isMobile" />
             <HomeOperations :is-mobile="isMobile" />
             <HomePricing :is-mobile="isMobile" />
             <HomeContact />
