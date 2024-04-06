@@ -1,5 +1,5 @@
 <template>
-    <UiLevel column space="xl" class="w-full">
+    <UiLevel column :space="isMobile ? 'sm' : 'xl'" class="w-full">
         <img
             alt="Light ray background"
             fetchpriority="high"
@@ -13,7 +13,7 @@
             src="/img/bghero_lg.webp"
         />
 
-        <UiLevel class="h-screen relative py-28 md:py-0" space="lg">
+        <UiLevel class="md:h-screen h-full md:w-fit w-full relative py-28 md:py-0" space="lg">
             <div class="flex flex-col gap-6 items-start ratio2 relative">
                 <div class="overflow-hidden">
                     <p
@@ -88,7 +88,7 @@
             <div
                 class="overflow-hidden absolute flex justify-center bottom-8 items-center gap-2 md:w-fit w-full -translate-x-1/2 left-1/2"
             >
-                <UiLevel space="sm" class="gs_blinds gs_blinds_bottom p-4">
+                <UiLevel space="sm" class="md:flex-row !flex-row gs_blinds gs_blinds_bottom p-4">
                     <span class="text-slate-400 text-center"
                         >Accompagné par</span
                     >
